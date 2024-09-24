@@ -1,0 +1,11 @@
+prometheus:
+  image: prom/prometheus
+  imagePullPolicy: Always
+  servicePort: 9090
+  persistence:
+    enabled: true
+    size: 10Gi
+  configmap:
+    name: prometheus-config
+  rule:
+    name: prometheus-rules
