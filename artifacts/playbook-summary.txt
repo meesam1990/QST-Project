@@ -1,0 +1,2253 @@
+
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : Check OS version and family] *********************************
+[0;32mok: [node] => {[0m
+[0;32m    "changed": false,[0m
+[0;32m    "msg": "This role is running against a supported OS OracleLinux 9"[0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : Check ansible version] ***************************************
+[0;32mok: [node] => {[0m
+[0;32m    "changed": false,[0m
+[0;32m    "msg": "This role is running a supported version of ansible 2.17.3 >= 2.10.1"[0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : Check password set for ec2-user | password state] ************
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : Check for local account ec2-user | Check for local account] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : Check password set for ec2-user | Assert local password set] ***
+[0;32mok: [node] => {[0m
+[0;32m    "changed": false,[0m
+[0;32m    "msg": "You have a password set for the ec2-user user"[0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : Check account is not locked for ec2-user | Assert local account not locked] ***
+[0;32mok: [node] => {[0m
+[0;32m    "changed": false,[0m
+[0;32m    "msg": "The local account is not locked for ec2-user user"[0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : Ensure root password is set] *********************************
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : Ensure root password is set] *********************************
+[0;32mok: [node] => {[0m
+[0;32m    "changed": false,[0m
+[0;32m    "msg": "You have a root password set"[0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : Discover and set container variable if required] *************
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : Load variable for container] *********************************
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : Output if discovered is a container] *************************
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : Check crypto-policy input] ***********************************
+[0;32mok: [node] => {[0m
+[0;32m    "changed": false,[0m
+[0;32m    "msg": "Crypto policy is a permitted version"[0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : Check crypto-policy module input] ****************************
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : Check rhel9cis_bootloader_password_hash variable has been changed] ***
+[0;31mfatal: [node]: FAILED! => {[0m
+[0;31m    "assertion": "rhel9cis_bootloader_password_hash.find('grub.pbkdf2.sha512') != -1 and rhel9cis_bootloader_password_hash != 'grub.pbkdf2.sha512.changethispassword'",[0m
+[0;31m    "changed": false,[0m
+[0;31m    "evaluated_to": false,[0m
+[0;31m    "msg": "This role will not be able to run single user password commands as rhel9cis_bootloader_password_hash variable has not been set correctly"[0m
+[0;31m}[0m
+[0;36m...ignoring[0m
+
+TASK [RHEL9-CIS : Gather the package facts] ************************************
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : Include OS specific variables] *******************************
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : PRELIM | Include audit specific variables] *******************
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : Pre Audit Setup | Setup the LE audit] ************************
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : Pre Audit Setup | Ensure {{ audit_conf_dir }} exists] ********
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : Pre Audit Setup | Install git] *******************************
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : Pre Audit Setup | Retrieve audit content files from git] *****
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : Pre Audit Setup | Copy to audit content files to server] *****
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : Pre Audit Setup | Unarchive audit content files on server] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : Pre Audit Setup | Get audit content from url] ****************
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : Pre Audit Setup | Check for goss file] ***********************
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : Pre Audit Setup | If audit ensure goss is available] *********
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : Pre Audit Setup | Copy ansible default vars values to test audit] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : Pre Audit | Run pre_remediation RHEL9-CIS audit] *************
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : Pre Audit | Capture audit data if json format] ***************
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : Pre Audit | Set Fact for audit summary] **********************
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : Pre Audit | Capture audit data if documentation format] ******
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : Pre Audit | Set Fact for audit summary] **********************
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : Audit_Only | Create local Directories for hosts] *************
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : Audit_only | Get audits from systems and put in group dir] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : Audit_only | Show Audit Summary] *****************************
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : Audit_only | Stop Playbook Audit Only selected] **************
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : PRELIM | AUDIT | Interactive Users] **************************
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : PRELIM | AUDIT | Interactive User accounts home directories] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : PRELIM | AUDIT | Interactive UIDs] ***************************
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : PRELIM | capture /etc/password variables] ********************
+[0;36mincluded: /Users/meesam/.ansible/roles/RHEL9-CIS/tasks/parse_etc_password.yml for node[0m
+
+TASK [RHEL9-CIS : PRELIM | 5.5.2 | 6.2.7 | 6.2.8 | 6.2.20 | Parse /etc/passwd] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : PRELIM | 5.5.2 | 6.2.7 | 6.2.8 | 6.2.20 | Split passwd entries] ***
+[0;32mok: [node] => (item=root:x:0:0:root:/root:/bin/bash)[0m
+[0;32mok: [node] => (item=bin:x:1:1:bin:/bin:/sbin/nologin)[0m
+[0;32mok: [node] => (item=daemon:x:2:2:daemon:/sbin:/sbin/nologin)[0m
+[0;32mok: [node] => (item=adm:x:3:4:adm:/var/adm:/sbin/nologin)[0m
+[0;32mok: [node] => (item=lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin)[0m
+[0;32mok: [node] => (item=sync:x:5:0:sync:/sbin:/bin/sync)[0m
+[0;32mok: [node] => (item=shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown)[0m
+[0;32mok: [node] => (item=halt:x:7:0:halt:/sbin:/sbin/halt)[0m
+[0;32mok: [node] => (item=mail:x:8:12:mail:/var/spool/mail:/sbin/nologin)[0m
+[0;32mok: [node] => (item=operator:x:11:0:operator:/root:/sbin/nologin)[0m
+[0;32mok: [node] => (item=games:x:12:100:games:/usr/games:/sbin/nologin)[0m
+[0;32mok: [node] => (item=ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin)[0m
+[0;32mok: [node] => (item=nobody:x:65534:65534:Kernel Overflow User:/:/sbin/nologin)[0m
+[0;32mok: [node] => (item=dbus:x:81:81:System message bus:/:/sbin/nologin)[0m
+[0;32mok: [node] => (item=systemd-coredump:x:999:997:systemd Core Dumper:/:/sbin/nologin)[0m
+[0;32mok: [node] => (item=systemd-resolve:x:193:193:systemd Resolver:/:/sbin/nologin)[0m
+[0;32mok: [node] => (item=tss:x:59:59:Account used for TPM access:/dev/null:/sbin/nologin)[0m
+[0;32mok: [node] => (item=polkitd:x:998:996:User for polkitd:/:/sbin/nologin)[0m
+[0;32mok: [node] => (item=unbound:x:997:994:Unbound DNS resolver:/etc/unbound:/sbin/nologin)[0m
+[0;32mok: [node] => (item=sssd:x:996:993:User for sssd:/:/sbin/nologin)[0m
+[0;32mok: [node] => (item=chrony:x:995:992::/var/lib/chrony:/sbin/nologin)[0m
+[0;32mok: [node] => (item=sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin)[0m
+[0;32mok: [node] => (item=ec2-user:x:1000:1000:ec2-user:/home/ec2-user:/bin/bash)[0m
+[0;32mok: [node] => (item=systemd-oom:x:990:990:systemd Userspace OOM Killer:/:/usr/sbin/nologin)[0m
+
+TASK [RHEL9-CIS : PRELIM | List users accounts] ********************************
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : PRELIM | Gather accounts with empty password fields] *********
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : PRELIM | Gather UID 0 accounts other than root] **************
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : PRELIM | Install crypto-policies | pkgs present] *************
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : PRELIM | Gather system-wide crypto-policy] *******************
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : PRELIM | Gather system-wide crypto-policy | set fact system policy] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : PRELIM | Gather system-wide crypto-policy module | set fact system policy submodule] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : PRELIM | if systemd coredump] ********************************
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : PRELIM | Section 1.1 | Create list of mount points] **********
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : PRELIM | Ensure python3-libselinux is installed] *************
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : PRELIM | Check whether machine is UEFI-based] ****************
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : PRELIM | set legacy boot and grub path | Bios] ***************
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : PRELIM | set grub fact | UEFI] *******************************
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : PRELIM | Update to latest gpg keys] **************************
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : PRELIM | Check gpg keys are imported will cause 1.2.1 to fail if not] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : PRELIM | Check key package matches RedHat] *******************
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : PRELIM | Force keys to be imported] **************************
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : PRELIM | Section 4.1 | Configure System Accounting (auditd)] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : PRELIM | 4.1.4.5 | Audit conf and rules files | list files] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : PRELIM | Section 5.1 | Configure cron] ***********************
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : PRELIM | Section 5.2 | SSH] **********************************
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : PRELIM | 5.3.4 | Find all sudoers files.] ********************
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : PRELIM | Capture UID_MIN information from logins.def] ********
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : PRELIM | Capture UID_MAX information from logins.def] ********
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : PRELIM | Capture GID_MIN information from logins.def] ********
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : PRELIM | set_facts for interactive uid/gid] ******************
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : PRELIM | Output of uid findings] *****************************
+[0;32mok: [node] => {[0m
+[0;32m    "msg": "1000 60000"[0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : PRELIM | Gather the package facts after prelim] **************
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 1.1.1.1 | PATCH | Ensure mounting of squashfs filesystems is disabled | Edit modprobe config] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 1.1.1.1 | PATCH | Ensure mounting of squashfs filesystems is disabled | blacklist] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 1.1.1.1 | PATCH | Ensure mounting of squashfs filesystems is disabled | Disable squashfs] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 1.1.1.2 | PATCH | Ensure mounting of udf filesystems is disable | Edit modprobe config] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 1.1.1.2 | PATCH | Ensure mounting of udf filesystems is disabled | blacklist] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 1.1.1.2 | PATCH | Ensure mounting of udf filesystems is disable | Disable udf] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 1.1.2.1 | PATCH | Ensure /tmp is a separate partition | Absent] ***
+[0;32mok: [node] => {[0m
+[0;32m    "msg": "Warning!! /tmp doesn't exist. This is a manual task"[0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : 1.1.2.1 | AUDIT | Set fact for manual task warning.] *********
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : "1.1.2.2 | PATCH | Ensure nodev option set on /tmp partition"
+"1.1.2.3 | PATCH | Ensure noexec option set on /tmp partition"
+"1.1.2.4 | PATCH | Ensure nosuid option set on /tmp partition"] ***
+[0;36mskipping: [node] => (item=/dev/mapper/ol-root) [0m
+[0;36mskipping: [node] => (item=/dev/nvme0n1p2) [0m
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : "1.1.2.1 | PATCH | Ensure /tmp is configured"
+"1.1.2.2 | PATCH | Ensure nodev option set on /tmp partition"
+"1.1.2.3 | PATCH | Ensure noexec option set on /tmp partition"
+"1.1.2.4 | PATCH | Ensure nosuid option set on /tmp partition"] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 1.1.3.1 | AUDIT | Ensure separate partition exists for /var | Absent] ***
+[0;32mok: [node] => {[0m
+[0;32m    "msg": "Warning!! /var doesn't exist. This is a manual task"[0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : 1.1.3.1 | AUDIT | Set fact for manual task warning.] *********
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : "1.1.3.2 | PATCH | Ensure nodev option set on /var partition"
+"1.1.3.3 | PATCH | Ensure nosuid option set on /var partition"] ***
+[0;36mskipping: [node] => (item=/dev/mapper/ol-root) [0m
+[0;36mskipping: [node] => (item=/dev/nvme0n1p2) [0m
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 1.1.4.1 | AUDIT | Ensure separate partition exists for /var/tmp | Absent] ***
+[0;32mok: [node] => {[0m
+[0;32m    "msg": "Warning!! /var/tmp doesn't exist. This is a manual task"[0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : 1.1.4.1 | AUDIT | Set fact for manual task warning.] *********
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : "1.1.4.2 | PATCH | Ensure noexec option set on /var/tmp partition"
+"1.1.4.3 | PATCH | Ensure nosuid option set on /var/tmp partition"
+"1.1.4.4 | PATCH | Ensure nodev option set on /var/tmp partition"] ***
+[0;36mskipping: [node] => (item=/dev/mapper/ol-root) [0m
+[0;36mskipping: [node] => (item=/dev/nvme0n1p2) [0m
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 1.1.5.1 | AUDIT | Ensure separate partition exists for /var/log | Absent] ***
+[0;32mok: [node] => {[0m
+[0;32m    "msg": "Warning!! /var/log doesn't exist. This is a manual task"[0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : 1.1.5.1 | AUDIT | Set fact for manual task warning.] *********
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : "1.1.5.2 | PATCH | Ensure nodev option set on /var/log partition"
+"1.1.5.3 | PATCH | Ensure noexec option set on /var/log partition"
+"1.1.5.4 | PATCH | Ensure nosuid option set on /var/log partition"] ***
+[0;36mskipping: [node] => (item=/dev/mapper/ol-root) [0m
+[0;36mskipping: [node] => (item=/dev/nvme0n1p2) [0m
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 1.1.6.1 | AUDIT | Ensure separate partition exists for /var/log/audit | Absent] ***
+[0;32mok: [node] => {[0m
+[0;32m    "msg": "Warning!! /var/log/audit doesn't exist. This is a manual task"[0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : 1.1.6.1 | AUDIT | Set fact for manual task warning.] *********
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : "1.1.6.2 | PATCH | Ensure noexec option set on /var/log/audit partition"
+"1.1.6.3 | PATCH | Ensure nodev option set on /var/log/audit partition"
+"1.1.6.4 | PATCH | Ensure nosuid option set on /var/log/audit partition"] ***
+[0;36mskipping: [node] => (item=/dev/mapper/ol-root) [0m
+[0;36mskipping: [node] => (item=/dev/nvme0n1p2) [0m
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 1.1.7.1 | AUDIT | Ensure separate partition exists for /home | Absent] ***
+[0;32mok: [node] => {[0m
+[0;32m    "msg": "Warning!! /home doesn't exist. This is a manual task"[0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : 1.1.7.1 | AUDIT | Set fact for manual task warning.] *********
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : "1.1.7.2 | PATCH | Ensure nodev option set on /home partition
+ 1.1.7.3 | PATCH | Ensure nosuid option set on /home partition"] ***
+[0;36mskipping: [node] => (item=/dev/mapper/ol-root) [0m
+[0;36mskipping: [node] => (item=/dev/nvme0n1p2) [0m
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 1.1.8.1 | AUDIT | Ensure /dev/shm is a separate partition | check exists] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 1.1.8.1 | AUDIT | Ensure /dev/shm is a separate partition | Absent] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 1.1.8.1 | AUDIT | Set fact for manual task warning.] *********
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : "1.1.8.2 | PATCH | Ensure nodev option set on /dev/shm partition | Set nodev option
+ 1.1.8.3 | PATCH | Ensure noexec option set on /dev/shm partition | Set nosuid option
+ 1.1.8.4 | PATCH | Ensure nosuid option set on /dev/shm partition | Set noexec option"] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 1.1.9 | PATCH | Disable USB Storage | Edit modprobe config] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 1.1.9 | PATCH | Disable USB Storage | Edit modprobe config] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 1.1.9 | PATCH | Disable USB Storage | blacklist] *************
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 1.2.1 | AUDIT | Ensure GPG keys are configured | list installed pubkey keys] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 1.2.1 | AUDIT | Ensure GPG keys are configured | Query found keys] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 1.2.1 | AUDIT | Ensure GPG keys are configured | expected keys fail] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 1.2.2 | AUDIT | Ensure gpgcheck is globally activated | Find repos] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 1.2.2 | PATCH | Ensure gpgcheck is globally activated | Update yum.repos] ***
+[0;32mok: [node] => (item=/etc/yum.repos.d/virt-ol9.repo)[0m
+[0;32mok: [node] => (item=/etc/yum.repos.d/oracle-linux-ol9.repo)[0m
+[0;32mok: [node] => (item=/etc/yum.repos.d/uek-ol9.repo)[0m
+
+TASK [RHEL9-CIS : 1.2.3 | AUDIT | Ensure package manager repositories are configured | Get repo list] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 1.2.3 | AUDIT | Ensure package manager repositories are configured | Display repo list] ***
+[0;32mok: [node] => {[0m
+[0;32m    "msg": [[0m
+[0;32m        "Warning!! Below are the configured repos. Please review and make sure all align with site policy",[0m
+[0;32m        [[0m
+[0;32m            "repo id                repo name",[0m
+[0;32m            "ol9_UEKR7              Oracle Linux 9 UEK Release 7 (x86_64)",[0m
+[0;32m            "ol9_appstream          Oracle Linux 9 Application Stream Packages (x86_64)",[0m
+[0;32m            "ol9_baseos_latest      Oracle Linux 9 BaseOS Latest (x86_64)"[0m
+[0;32m        ][0m
+[0;32m    ][0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : 1.2.3 | AUDIT | Set fact for manual task warning.] ***********
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 1.2.4 | PATCH | Ensure repo_gpgcheck is globally activated | dnf.conf] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 1.2.4 | AUDIT| Ensure repo_gpgcheck is globally activated | get repo files] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 1.2.4 | PATCH | Ensure repo_gpgcheck is globally activated | amend repo files] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 1.3.1 | PATCH | Ensure AIDE is installed | Install AIDE] *****
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 1.3.1 | PATCH | Ensure AIDE is installed | Build AIDE DB] ****
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 1.3.1 | PATCH | Ensure AIDE is installed | Wait for file before continuing] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 1.3.1 | PATCH | Ensure AIDE is installed | copy AIDE DB] *****
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 1.3.2 | PATCH | Ensure filesystem integrity is regularly checked] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 1.3.3 | PATCH | Ensure cryptographic mechanisms are used to protect the integrity of audit tools] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 1.4.1 | PATCH | Ensure bootloader password is set] ***********
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 1.4.2 | PATCH | Ensure permissions on bootloader config are configured] ***
+[0;33mchanged: [node] => (item={'path': 'grub.cfg', 'mode': '0700'})[0m
+[0;32mok: [node] => (item={'path': 'grubenv', 'mode': '0600'})[0m
+[0;32mok: [node] => (item={'path': 'user.cfg', 'mode': '0600'})[0m
+
+TASK [RHEL9-CIS : 1.5.1 | PATCH | Ensure core dump storage is disabled] ********
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 1.5.2 | PATCH | Ensure core dump backtraces are disabled] ****
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 1.5.3 | PATCH | Ensure address space layout randomization (ASLR) is enabled] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 1.5.3 | PATCH | Ensure address space layout randomization (ASLR) is enabled] ***
+[0;32mok: [node] => {[0m
+[0;32m    "msg": "Control being set via Handler 'update sysctl' which writes to /etc/sysctl.d/60-kernel_sysctl.conf"[0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : SECTION | 1.6 | Mandatory Access Control] ********************
+[0;36mincluded: /Users/meesam/.ansible/roles/RHEL9-CIS/tasks/section_1/cis_1.6.1.x.yml for node[0m
+
+TASK [RHEL9-CIS : 1.6.1.1 | PATCH | Ensure SELinux is installed] ***************
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 1.6.1.2 | PATCH | Ensure SELinux is not disabled in bootloader configuration] ***
+[0;32mok: [node] => (item=selinux=0)[0m
+[0;32mok: [node] => (item=enforcing=0)[0m
+
+TASK [RHEL9-CIS : 1.6.1.3 | PATCH | Ensure SELinux policy is configured] *******
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 1.6.1.4 | PATCH | Ensure the SELinux state is not disabled] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 1.6.1.5 | PATCH | Ensure the SELinux state is enforcing] *****
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 1.6.1.6 | AUDIT | Ensure no unconfined services exist | Find the unconfined services] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 1.6.1.6 | AUDIT | Ensure no unconfined services exist | Message on unconfined services] ***
+[0;32mok: [node] => {[0m
+[0;32m    "msg": "Warning!! You have unconfined services: ['amazon-ssm-agen']"[0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : 1.6.1.6 | AUDIT | Set fact for manual task warning.] *********
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 1.6.1.7 | PATCH | Ensure SETroubleshoot is not installed] ****
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 1.6.1.8 | PATCH | Ensure the MCS Translation Service (mcstrans) is not installed] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 1.7.1 | PATCH | Ensure message of the day is configured properly] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 1.7.2 | PATCH | Ensure local login warning banner is configured properly] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 1.7.3 | PATCH | Ensure remote login warning banner is configured properly] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 1.7.4 | PATCH | Ensure permissions on /etc/motd are configured] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 1.7.5 | PATCH | Ensure permissions on /etc/issue are configured] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 1.7.6 | PATCH | Ensure permissions on /etc/issue.net are configured] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 1.8.1 | PATCH | Ensure GNOME Display Manager is removed] *****
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 1.8.2 | PATCH | Ensure GDM login banner is configured | gdm profile] ***
+[0;36mskipping: [node] => (item={'regexp': 'user-db', 'line': 'user-db:user'}) [0m
+[0;36mskipping: [node] => (item={'regexp': 'system-db', 'line': 'system-db:gdm'}) [0m
+[0;36mskipping: [node] => (item={'regexp': 'file-db', 'line': 'file-db:/usr/share/gdm/greeter-dconf-defaults'}) [0m
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 1.8.2 | PATCH | Ensure GDM login banner is configured | gdm profile] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 1.8.3 | PATCH | Ensure GDM disable-user-list option is enabled] ***
+[0;36mskipping: [node] => (item={'file': '/etc/dconf/profile/gdm', 'regexp': 'user-db', 'line': 'user-db:user'}) [0m
+[0;36mskipping: [node] => (item={'file': '/etc/dconf/profile/gdm', 'regexp': 'system-db', 'line': 'system-db:gdm'}) [0m
+[0;36mskipping: [node] => (item={'file': '/etc/dconf/profile/gdm', 'regexp': 'file-db', 'line': 'file-db:/usr/share/gdm/greeter-dconf-defaults'}) [0m
+[0;36mskipping: [node] => (item={'file': '/etc/dconf/db/gdm.d/00-login-screen', 'regexp': '\\[org\\/gnome\\/login-screen\\]', 'line': '[org/gnome/login-screen]'}) [0m
+[0;36mskipping: [node] => (item={'file': '/etc/dconf/db/gdm.d/00-login-screen', 'regexp': 'disable-user-list=', 'line': 'disable-user-list=true'}) [0m
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 1.8.4 | PATCH | Ensure GDM screen locks when the user is idle | User profile] ***
+[0;36mskipping: [node] => (item={'regexp': '^user-db', 'line': 'user-db:user'}) [0m
+[0;36mskipping: [node] => (item={'regexp': '^system-db', 'line': 'system-db:local'}) [0m
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 1.8.4 | PATCH | Ensure GDM screen locks when the user is idle | Make db directory] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 1.8.4 | PATCH | Ensure GDM screen locks when the user is idle | Make conf file] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 1.8.5 | PATCH | Ensure GDM screen locks cannot be overridden | Make lock directory] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 1.8.5 | PATCH | Ensure GDM screen locks cannot be overridden | Make lock file] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 1.8.6 | PATCH | Ensure GDM automatic mounting of removable media is disabled] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 1.8.7 | PATCH | Ensure GDM disabling automatic mounting of removable media is not overridden | Make lock directory] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 1.8.7 | PATCH | Ensure GDM disabling automatic mounting of removable media is not overridden | Make lock file] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 1.8.8 | PATCH | Ensure GDM autorun-never is enabled | Make directory] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 1.8.8 | PATCH | Ensure GDM autorun-never is enabled | Make conf file] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 1.8.9 | PATCH | Ensure GDM autorun-never is not overridden | Make lock directory] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 1.8.9 | PATCH | Ensure GDM autorun-never is not overridden | Make lockfile] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 1.8.10 | PATCH | Ensure XDMCP is not enabled] ****************
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 1.9 | PATCH | Ensure updates, patches, and additional security software are installed] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : SECTION | 1.10 | Crypto policies] ****************************
+[0;36mincluded: /Users/meesam/.ansible/roles/RHEL9-CIS/tasks/section_1/cis_1.10.yml for node[0m
+
+TASK [RHEL9-CIS : 1.10 | PATCH | Ensure system-wide crypto policy is not legacy | set_fact] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 1.10 | PATCH | Ensure system-wide crypto policy is not legacy] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 2.1.1 | PATCH | Ensure time synchronization is in use] *******
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 2.1.2 | PATCH | Ensure chrony is configured | Set configuration] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 2.1.2 | PATCH | Ensure chrony is configured | modify /etc/sysconfig/chronyd | 1] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 2.2.1 | PATCH | Ensure xorg-x11-server-common is not installed] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 2.2.2 | PATCH | Ensure Avahi Server is not installed] ********
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 2.2.3 | PATCH | Ensure CUPS is not installed] ****************
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 2.2.4 | PATCH | Ensure DHCP Server is not installed] *********
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 2.2.5 | PATCH | Ensure DNS Server is not installed] **********
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 2.2.6 | PATCH | Ensure VSFTP Server is not installed] ********
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 2.2.7 | PACH | Ensure TFTP Server is not installed] **********
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 2.2.8 | PATCH | Ensure a web server is not installed | Remove httpd server] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 2.2.8 | PATCH | Ensure a web server is not installed | Remove nginx server] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 2.2.9 | PATCH | Ensure IMAP and POP3 server is not installed] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 2.2.9 | PATCH | Ensure IMAP and POP3 server is not installed] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 2.2.10 | PATCH | Ensure Samba is not enabled] ****************
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 2.2.11 | PATCH | Ensure HTTP Proxy Server is not installed] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 2.2.12 | PATCH | Ensure net-snmp is not installed] ***********
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 2.2.13 | PATCH | Ensure telnet-server is not installed] ******
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 2.2.14 | PATCH | Ensure dnsmasq is not installed] ************
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 2.2.15 | PATCH | Ensure mail transfer agent is configured for local-only mode] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 2.2.16 | PATCH | Ensure nfs-utils is not installed or the nfs-server service is masked | remove package] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 2.2.16 | PATCH | Ensure nfs-utils is not installed or the nfs-server service is masked | mask service] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 2.2.17 | PATCH | Ensure rpcbind is not installed or the rpcbind services are masked | remove package] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 2.2.17 | PATCH | Ensure rpcbind is not installed or the rpcbind services are masked | mask service] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 2.2.18 | PATCH | Ensure rsync-daemon is not installed or the rsync service is masked | remove package] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 2.2.18 | PATCH | Ensure rsync service is not enabled | mask service] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 2.3.1 | PATCH | Ensure telnet client is not installed] *******
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 2.3.2 | PATCH | Ensure LDAP client is not installed] *********
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 2.3.3 | PATCH | Ensure TFTP client is not installed] *********
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 2.3.4 | PATCH | Ensure FTP client is not installed] **********
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 2.4 | AUDIT | Ensure nonessential services listening on the system are removed or masked | Get list of services] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 2.4 | AUDIT | Ensure nonessential services listening on the system are removed or masked | Get list of sockets] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 2.4 | AUDIT | Ensure nonessential services listening on the system are removed or masked | Display list of services] ***
+[0;32mok: [node] => {[0m
+[0;32m    "msg": [[0m
+[0;32m        "Warning!! Below are the list of services and sockets, both active and inactive",[0m
+[0;32m        "Please review to make sure all are essential",[0m
+[0;32m        [[0m
+[0;32m            "  UNIT                                                                                      LOAD   ACTIVE SUB     DESCRIPTION",[0m
+[0;32m            "  amazon-ssm-agent.service                                                                  loaded active running amazon-ssm-agent",[0m
+[0;32m            "  auditd.service                                                                            loaded active running Security Auditing Service",[0m
+[0;32m            "  chronyd.service                                                                           loaded active running NTP client/server",[0m
+[0;32m            "  crond.service                                                                             loaded active running Command Scheduler",[0m
+[0;32m            "  dbus-broker.service                                                                       loaded active running D-Bus System Message Bus",[0m
+[0;32m            "  dracut-shutdown.service                                                                   loaded active exited  Restore /run/initramfs on shutdown",[0m
+[0;32m            "  firewalld.service                                                                         loaded active running firewalld - dynamic firewall daemon",[0m
+[0;32m            "  getty@tty1.service                                                                        loaded active running Getty on tty1",[0m
+[0;32m            "  import-state.service                                                                      loaded active exited  Import network configuration from initramfs",[0m
+[0;32m            "  irqbalance.service                                                                        loaded active running irqbalance daemon",[0m
+[0;32m            "  kdump.service                                                                             loaded active exited  Crash recovery kernel arming",[0m
+[0;32m            "  kmod-static-nodes.service                                                                 loaded active exited  Create List of Static Device Nodes",[0m
+[0;32m            "  lvm2-monitor.service                                                                      loaded active exited  Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling",[0m
+[0;32m            "  NetworkManager-wait-online.service                                                        loaded active exited  Network Manager Wait Online",[0m
+[0;32m            "  NetworkManager.service                                                                    loaded active running Network Manager",[0m
+[0;32m            "  nis-domainname.service                                                                    loaded active exited  Read and set NIS domainname from /etc/sysconfig/network",[0m
+[0;32m            "  plymouth-quit-wait.service                                                                loaded active exited  Hold until boot process finishes up",[0m
+[0;32m            "  plymouth-quit.service                                                                     loaded active exited  Terminate Plymouth Boot Screen",[0m
+[0;32m            "  plymouth-read-write.service                                                               loaded active exited  Tell Plymouth To Write Out Runtime Data",[0m
+[0;32m            "  polkit.service                                                                            loaded active running Authorization Manager",[0m
+[0;32m            "  rsyslog.service                                                                           loaded active running System Logging Service",[0m
+[0;32m            "  serial-getty@ttyS0.service                                                                loaded active running Serial Getty on ttyS0",[0m
+[0;32m            "  sshd.service                                                                              loaded active running OpenSSH server daemon",[0m
+[0;32m            "  systemd-fsck-root.service                                                                 loaded active exited  File System Check on Root Device",[0m
+[0;32m            "  systemd-fsck@dev-disk-by\\x2duuid-f4b7b313\\x2d6b2f\\x2d4c6f\\x2d8e91\\x2d5c09b696cf60.service loaded active exited  File System Check on /dev/disk/by-uuid/f4b7b313-6b2f-4c6f-8e91-5c09b696cf60",[0m
+[0;32m            "  systemd-journal-flush.service                                                             loaded active exited  Flush Journal to Persistent Storage",[0m
+[0;32m            "  systemd-journald.service                                                                  loaded active running Journal Service",[0m
+[0;32m            "  systemd-logind.service                                                                    loaded active running User Login Management",[0m
+[0;32m            "  systemd-random-seed.service                                                               loaded active exited  Load/Save OS Random Seed",[0m
+[0;32m            "  systemd-remount-fs.service                                                                loaded active exited  Remount Root and Kernel File Systems",[0m
+[0;32m            "  systemd-sysctl.service                                                                    loaded active exited  Apply Kernel Variables",[0m
+[0;32m            "  systemd-tmpfiles-setup-dev.service                                                        loaded active exited  Create Static Device Nodes in /dev",[0m
+[0;32m            "  systemd-tmpfiles-setup.service                                                            loaded active exited  Create Volatile Files and Directories",[0m
+[0;32m            "  systemd-udev-trigger.service                                                              loaded active exited  Coldplug All udev Devices",[0m
+[0;32m            "  systemd-udevd.service                                                                     loaded active running Rule-based Manager for Device Events and Files",[0m
+[0;32m            "  systemd-update-utmp.service                                                               loaded active exited  Record System Boot/Shutdown in UTMP",[0m
+[0;32m            "  systemd-user-sessions.service                                                             loaded active exited  Permit User Sessions",[0m
+[0;32m            "  systemd-vconsole-setup.service                                                            loaded active exited  Setup Virtual Console",[0m
+[0;32m            "  tuned.service                                                                             loaded active running Dynamic System Tuning Daemon",[0m
+[0;32m            "  user-runtime-dir@1000.service                                                             loaded active exited  User Runtime Directory /run/user/1000",[0m
+[0;32m            "  user@1000.service                                                                         loaded active running User Manager for UID 1000",[0m
+[0;32m            "",[0m
+[0;32m            "LOAD   = Reflects whether the unit definition was properly loaded.",[0m
+[0;32m            "ACTIVE = The high-level unit activation state, i.e. generalization of SUB.",[0m
+[0;32m            "SUB    = The low-level unit activation state, values depend on unit type.",[0m
+[0;32m            "41 loaded units listed. Pass --all to see loaded but inactive units, too.",[0m
+[0;32m            "To show all installed unit files use 'systemctl list-unit-files'."[0m
+[0;32m        ],[0m
+[0;32m        [[0m
+[0;32m            "  UNIT                            LOAD   ACTIVE SUB       DESCRIPTION",[0m
+[0;32m            "  dbus.socket                     loaded active running   D-Bus System Message Bus Socket",[0m
+[0;32m            "  dm-event.socket                 loaded active listening Device-mapper event daemon FIFOs",[0m
+[0;32m            "  lvm2-lvmpolld.socket            loaded active listening LVM2 poll daemon socket",[0m
+[0;32m            "  sssd-kcm.socket                 loaded active listening SSSD Kerberos Cache Manager responder socket",[0m
+[0;32m            "  systemd-coredump.socket         loaded active listening Process Core Dump Socket",[0m
+[0;32m            "  systemd-initctl.socket          loaded active listening initctl Compatibility Named Pipe",[0m
+[0;32m            "  systemd-journald-dev-log.socket loaded active running   Journal Socket (/dev/log)",[0m
+[0;32m            "  systemd-journald.socket         loaded active running   Journal Socket",[0m
+[0;32m            "  systemd-rfkill.socket           loaded active listening Load/Save RF Kill Switch Status /dev/rfkill Watch",[0m
+[0;32m            "  systemd-udevd-control.socket    loaded active running   udev Control Socket",[0m
+[0;32m            "  systemd-udevd-kernel.socket     loaded active running   udev Kernel Socket",[0m
+[0;32m            "",[0m
+[0;32m            "LOAD   = Reflects whether the unit definition was properly loaded.",[0m
+[0;32m            "ACTIVE = The high-level unit activation state, i.e. generalization of SUB.",[0m
+[0;32m            "SUB    = The low-level unit activation state, values depend on unit type.",[0m
+[0;32m            "11 loaded units listed. Pass --all to see loaded but inactive units, too.",[0m
+[0;32m            "To show all installed unit files use 'systemctl list-unit-files'."[0m
+[0;32m        ][0m
+[0;32m    ][0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : 2.4 | AUDIT | Set fact for manual task warning.] *************
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 3.1.1 | PATCH | Ensure IPv6 status is identified | refresh] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.1.1 | PATCH | Ensure IPv6 status is identified | disable] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.1.2 | AUDIT | Ensure wireless interfaces are disabled | Check if nmcli command is available | if wlan exists] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.1.2 | AUDIT | Ensure wireless interfaces are disabled | Check if wifi is enabled] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.1.2 | PATCH | Ensure wireless interfaces are disabled | Disable wifi if enabled] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.1.3 | PATCH | Ensure TIPC is disabled] *********************
+[0;33mchanged: [node] => (item=tipc)[0m
+
+TASK [RHEL9-CIS : 3.1.3 | PATCH | Ensure TIPC is disabled | blacklist] *********
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 3.2.1 | PATCH | Ensure IP forwarding is disabled | Disable IPv4 forwarding | Set Fact] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 3.2.1 | PATCH | Ensure IP forwarding is disabled | Disable IPv4 forwarding] ***
+[0;32mok: [node] => {[0m
+[0;32m    "msg": "Control being set via Handler 'update sysctl' which writes to /etc/sysctl.d/60-netipv4_sysctl.conf"[0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : 3.2.1 | PATCH | Ensure IP forwarding is disabled | Disable IPv6 forwarding | Set Fact] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 3.2.1 | PATCH | Ensure IP forwarding is disabled | Disable IPv6 forwarding] ***
+[0;32mok: [node] => {[0m
+[0;32m    "msg": "Control being set via Handler 'update sysctl' which writes to /etc/sysctl.d/60-netipv6_sysctl.conf"[0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : 3.2.2 | PATCH | Ensure packet redirect sending is disabled | Set Fact] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 3.2.2 | PATCH | Ensure packet redirect sending is disabled] ***
+[0;32mok: [node] => {[0m
+[0;32m    "msg": "Control being set via Handler 'update sysctl' which writes to /etc/sysctl.d/60-netipv4_sysctl.conf"[0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : 3.3.1 | PATCH | Ensure source routed packets are not accepted | IPv4 | Set Fact] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 3.3.1 | PATCH | Ensure source routed packets are not accepted | IPv4] ***
+[0;32mok: [node] => {[0m
+[0;32m    "msg": "Control being set via Handler 'update sysctl' which writes to /etc/sysctl.d/60-netipv4_sysctl.conf"[0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : 3.3.1 | PATCH | Ensure source routed packets are not accepted | IPv6 | Set Fact] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 3.3.1 | PATCH | Ensure source routed packets are not accepted | IPv6] ***
+[0;32mok: [node] => {[0m
+[0;32m    "msg": "Control being set via Handler 'update sysctl' which writes to /etc/sysctl.d/60-netipv6_sysctl.conf"[0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : 3.3.2 | PATCH | Ensure ICMP redirects are not accepted | IPv4 | Set Fact] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 3.3.2 | PATCH | Ensure ICMP redirects are not accepted | IPv4] ***
+[0;32mok: [node] => {[0m
+[0;32m    "msg": "Control being set via Handler 'update sysctl' which writes to /etc/sysctl.d/60-netipv4_sysctl.conf"[0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : 3.3.2 | PATCH | Ensure ICMP redirects are not accepted | IPv6 | Set Fact] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 3.3.2 | PATCH | Ensure ICMP redirects are not accepted | IPv6] ***
+[0;32mok: [node] => {[0m
+[0;32m    "msg": "Control being set via Handler 'update sysctl' which writes to /etc/sysctl.d/60-netipv6_sysctl.conf"[0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : 3.3.3 | PATCH | Ensure secure ICMP redirects are not accepted | Set Fact] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 3.3.3 | PATCH | Ensure secure ICMP redirects are not accepted] ***
+[0;32mok: [node] => {[0m
+[0;32m    "msg": "Control being set via Handler 'update sysctl' which writes to /etc/sysctl.d/60-netipv4_sysctl.conf"[0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : 3.3.4 | PATCH | Ensure suspicious packets are logged | Set Fact] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 3.3.4 | PATCH | Ensure suspicious packets are logged] ********
+[0;32mok: [node] => {[0m
+[0;32m    "msg": "Control being set via Handler 'update sysctl' which writes to /etc/sysctl.d/60-netipv4_sysctl.conf"[0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : 3.3.5 | PATCH | Ensure broadcast ICMP requests are ignored | Set Fact] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 3.3.5 | PATCH | Ensure broadcast ICMP requests are ignored"] ***
+[0;32mok: [node] => {[0m
+[0;32m    "msg": "Control being set via Handler 'update sysctl' which writes to /etc/sysctl.d/60-netipv4_sysctl.conf"[0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : 3.3.6 | PATCH | Ensure bogus ICMP responses are ignored | Set Fact] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 3.3.6 | PATCH | Ensure bogus ICMP responses are ignored] *****
+[0;32mok: [node] => {[0m
+[0;32m    "msg": "Control being set via Handler 'update sysctl' which writes to /etc/sysctl.d/60-netipv4_sysctl.conf"[0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : 3.3.7 | PATCH | Ensure Reverse Path Filtering is enabled | Set Fact] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 3.3.7 | PATCH | Ensure Reverse Path Filtering is enabled] ****
+[0;32mok: [node] => {[0m
+[0;32m    "msg": "Control being set via Handler 'update sysctl' which writes to /etc/sysctl.d/60-netipv4_sysctl.conf"[0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : 3.3.8 | PATCH | Ensure TCP SYN Cookies is enabled | Set Fact] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 3.3.8 | PATCH | Ensure TCP SYN Cookies is enabled] ***********
+[0;32mok: [node] => {[0m
+[0;32m    "msg": "Control being set via Handler 'update sysctl' which writes to /etc/sysctl.d/60-netipv4_sysctl.conf"[0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : 3.3.9 | PATCH | Ensure IPv6 router advertisements are not accepted | IPv6 | Set Fact] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 3.3.9 | PATCH | Ensure IPv6 router advertisements are not accepted | IPv6] ***
+[0;32mok: [node] => {[0m
+[0;32m    "msg": "Control being set via Handler 'update sysctl' which writes to /etc/sysctl.d/60-netipv6_sysctl"[0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : 3.4.1.1 | PATCH | Ensure nftables is installed] **************
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.4.1.2 | PATCH | Ensure a single firewall configuration utility is in use | nftables] ***
+[0;36mskipping: [node] => (item=firewalld) [0m
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.4.1.2 | PATCH | Ensure a single firewall configuration utility is in use | firewalld] ***
+[0;33mchanged: [node] => (item=nftables)[0m
+
+TASK [RHEL9-CIS : 3.4.1.2 | PATCH | Ensure a single firewall configuration utility is in use | package installed] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 3.4.1.2 | PATCH | Ensure a single firewall configuration utility is in use | firewalld started and enabled] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 3.4.2.1 | AUDIT | Ensure firewalld default zone is set] ******
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 3.4.2.1 | AUDIT | Ensure firewalld default zone is set] ******
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.4.2.2 | AUDIT | Ensure a table exists | Check for tables] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.4.2.2 | AUDIT | Ensure an nftables table exists | Show existing tables] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.4.2.2 | AUDIT | Ensure an nftables table exists | Alert on no tables] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.4.2.2 | AUDIT | Set fact for manual task warning.] *********
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.4.2.2 | PATCH | Ensure a table exists | Create table if needed] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.4.2.3 | AUDIT | Ensure nftables base chains exist | Get current chains for INPUT] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.4.2.3 | AUDIT | Ensure nftables base chains exist | Get current chains for FORWARD] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.4.2.3 | AUDIT | Ensure nftables base chains exist | Get current chains for OUTPUT] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.4.2.3 | AUDIT | Ensure nftables base chains exist | Display chains for review] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.4.2.3 | PATCH | Ensure nftables base chains exist | Create chains if needed] ***
+[0;36mskipping: [node] => (item=nft create chain inet "filter" input { type filter hook input priority 0 \; }) [0m
+[0;36mskipping: [node] => (item=nft create chain inet "filter" forward { type filter hook forward priority 0 \; }) [0m
+[0;36mskipping: [node] => (item=nft create chain inet "filter" output { type filter hook output priority 0 \; }) [0m
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.4.2.4 | AUDIT | Ensure host based firewall loopback traffic is configured | Gather iif lo accept existence | nftables] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.4.2.4 | AUDIT | Ensure host based firewall loopback traffic is configured | Gather ip saddr existence | nftables] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.4.2.4 | AUDIT | Ensure host based firewall loopback traffic is configured | Gather ip6 saddr existence | nftables] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.4.2.4 | PATCH | Ensure host based firewall loopback traffic is configured | Set iif lo accept rule | nftables] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.4.2.4 | PATCH | Ensure host based firewall loopback traffic is configured | Set ip sddr rule | nftables] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.4.2.4 | PATCH | Ensure host based firewall loopback traffic is configured | Set ip6 saddr rule | nftables] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.4.2.4 | PATCH | Ensure host based firewall loopback traffic is configured | firewalld] ***
+[0;33mchanged: [node] => (item=rule family="ipv4" source address="127.0.0.1" destination not address="127.0.0.1" drop)[0m
+[0;33mchanged: [node] => (item=rule family="ipv6" source address="::1" destination not address="::1" drop)[0m
+
+TASK [RHEL9-CIS : 3.4.2.5 | AUDIT | Ensure firewalld drops unnecessary services and ports | Get list of services and ports] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 3.4.2.5 | AUDIT | Ensure firewalld drops unnecessary services and ports | Show services and ports] ***
+[0;32mok: [node] => {[0m
+[0;32m    "msg": [[0m
+[0;32m        "The items below are the services and ports that are accepted, please correct as needed",[0m
+[0;32m        [[0m
+[0;32m            "public (active)",[0m
+[0;32m            "  target: default",[0m
+[0;32m            "  icmp-block-inversion: no",[0m
+[0;32m            "  interfaces: eth0",[0m
+[0;32m            "  sources: ",[0m
+[0;32m            "  services: cockpit dhcpv6-client ssh",[0m
+[0;32m            "  ports: ",[0m
+[0;32m            "  protocols: ",[0m
+[0;32m            "  forward: no",[0m
+[0;32m            "  masquerade: no",[0m
+[0;32m            "  forward-ports: ",[0m
+[0;32m            "  source-ports: ",[0m
+[0;32m            "  icmp-blocks: ",[0m
+[0;32m            "  rich rules: ",[0m
+[0;32m            "\trule family=\"ipv6\" source address=\"::1\" destination NOT address=\"::1\" drop",[0m
+[0;32m            "\trule family=\"ipv4\" source address=\"127.0.0.1\" destination NOT address=\"127.0.0.1\" drop"[0m
+[0;32m        ][0m
+[0;32m    ][0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : 3.4.2.6 | AUDIT | Ensure nftables established connections are configured | Gather incoming connection rules] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.4.2.6| AUDIT | Ensure nftables established connections are configured | Gather outbound connection rules] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.4.2.6| PATCH | Ensure nftables established connections are configured | Add input tcp established accept policy] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.4.2.6 | PATCH | Ensure nftables established connections are configured | Add input udp established accept policy] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.4.2.6 | PATCH | Ensure nftables established connections are configured | Add input icmp established accept policy] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.4.2.6 | PATCH | Ensure nftables established connections are configured | Add output tcp new, related, established accept policy] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.4.2.6 | PATCH | Ensure nftables established connections are configured | Add output udp new, related, established accept policy] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.4.2.6 | PATCH | Ensure nftables established connections are configured | Add output icmp new, related, established accept policy] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.4.2.7 | AUDIT | Ensure nftables default deny firewall policy | Check for hook input deny policy] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.4.2.7 | AUDIT | Ensure nftables default deny firewall policy | Check for hook forward deny policy] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.4.2.7 | AUDIT | Ensure nftables default deny firewall policy | Check for hook output deny policy] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.4.2.7 | AUDIT | Ensure nftables default deny firewall policy | Check for SSH allow] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.4.2.7 | PATCH | Ensure nftables default deny firewall policy | Enable SSH traffic] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.4.2.7 | PATCH | Ensure nftables default deny firewall policy | Set hook input deny policy] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.4.2.7 | PATCH | Ensure nftables default deny firewall policy | Create hook forward deny policy] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 3.4.2.7 | PATCH | Ensure nftables default deny firewall policy | Create hook output deny policy] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 4.1.1.1 | PATCH | Ensure auditd is installed | Install auditd packages] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 4.1.1.1 | PATCH | Ensure auditd is installed | Install auditd-lib packages] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 4.1.1.2 | PATCH | Ensure auditing for processes that start prior to auditd is enabled | Grubby existence of current value] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 4.1.1.2 | PATCH | Ensure auditing for processes that start prior to auditd is enabled | Grubby update, if needed] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 4.1.1.3 | AUDIT | Ensure audit_backlog_limit is sufficient | Grubby existence of current value] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 4.1.1.3 | AUDIT | Check to see if limits are set] ************
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 4.1.1.3 | AUDIT | Check to see if any limits are too low] ****
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 4.1.1.3 | AUDIT | Ensure audit_backlog_limit is sufficient | Grubby update applied] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 4.1.1.4 | PATCH | Ensure auditd service is enabled] **********
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 4.1.2.1 | PATCH | Ensure audit log storage size is configured] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 4.1.2.2 | PATCH | Ensure audit logs are not automatically deleted] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 4.1.2.3 | PATCH | Ensure system is disabled when audit logs are full] ***
+[0;33mchanged: [node] => (item={'regexp': '^admin_space_left_action', 'line': 'admin_space_left_action = halt'})[0m
+[0;32mok: [node] => (item={'regexp': '^action_mail_acct', 'line': 'action_mail_acct = root'})[0m
+[0;33mchanged: [node] => (item={'regexp': '^space_left_action', 'line': 'space_left_action = email'})[0m
+
+TASK [RHEL9-CIS : PATCH | Configure other keys for auditd.conf] ****************
+[0;36mskipping: [node] => (item=admin_space_left) [0m
+[0;36mskipping: [node] => (item=space_left) [0m
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 4.1.3.1 | PATCH | Ensure changes to system administration scope (sudoers) is collected] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 4.1.3.2 | PATCH | Ensure actions as another user are always logged] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 4.1.3.3 | PATCH | Ensure events that modify the sudo log file are collected] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 4.1.3.4 | PATCH | Ensure events that modify date and time information are collected] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 4.1.3.5 | PATCH | Ensure events that modify the system's network environment are collected] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 4.1.3.6 | PATCH | Ensure use of privileged commands is collected] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 4.1.3.6 | PATCH | Ensure use of privileged commands is collected] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 4.1.3.7 | PATCH | Ensure unsuccessful unauthorized file access attempts are collected] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 4.1.3.8 | PATCH | Ensure events that modify user/group information are collected] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 4.1.3.9 | PATCH | Ensure discretionary access control permission modification events are collected] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 4.1.3.10 | PATCH | Ensure successful file system mounts are collected] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 4.1.3.11 | PATCH | Ensure session initiation information is collected] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 4.1.3.12 | PATCH | Ensure login and logout events are collected] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 4.1.3.13 | PATCH | Ensure file deletion events by users are collected] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 4.1.3.14 | PATCH | Ensure events that modify the system's Mandatory Access Controls are collected] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 4.1.3.15 | PATCH | Ensure successful and unsuccessful attempts to use the chcon command are recorded] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 4.1.3.16 | PATCH | Ensure successful and unsuccessful attempts to use the setfacl command are recorded] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 4.1.3.17 | PATCH | Ensure successful and unsuccessful attempts to use the chacl command are recorded] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 4.1.3.18 | PATCH | Ensure successful and unsuccessful attempts to use the usermod command are recorded] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 4.1.3.19 | PATCH | Ensure kernel module loading and unloading is collected] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 4.1.3.20 | PATCH | Ensure the audit configuration is immutable] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 4.1.3.21 | AUDIT | Ensure the running and on disk configuration is the same] ***
+[0;32mok: [node] => {[0m
+[0;32m    "msg": [[0m
+[0;32m        "Please run augenrules --load if you suspect there is a configuration that is not active"[0m
+[0;32m    ][0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : Auditd | 4.1.3 | Auditd controls updated] ********************
+[0;32mok: [node] => {[0m
+[0;32m    "msg": "Auditd Controls handled in POST using template - updating /etc/auditd/rules.d/99_auditd.rules"[0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : 4.1.4.1 | AUDIT | Ensure audit log files are mode 0640 or less permissive | discover file] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 4.1.4.1 | AUDIT | Ensure audit log files are mode 0640 or less permissive | stat file] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : "4.1.4.1 | PATCH | Ensure audit log files are mode 0640 or less permissive"
+"4.1.4.2 | PATCH | Ensure only authorized users own audit log files"
+"4.1.4.3 | PATCH | Ensure only authorized groups are assigned ownership of audit log files"] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 4.1.4.4 | AUDIT | Ensure the audit log directory is 0750 or more restrictive | get current permissions] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 4.1.4.4 | PATCH | Ensure the audit log directory is 0750 or more restrictive | set] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 4.1.4.5 | PATCH | Ensure audit configuration files are 640 or more restrictive] ***
+[0;32mok: [node] => (item=/etc/audit/auditd.conf)[0m
+[0;32mok: [node] => (item=/etc/audit/audit-stop.rules)[0m
+[0;32mok: [node] => (item=/etc/audit/audit.rules)[0m
+[0;32mok: [node] => (item=/etc/audit/plugins.d/af_unix.conf)[0m
+[0;32mok: [node] => (item=/etc/audit/rules.d/audit.rules)[0m
+
+TASK [RHEL9-CIS : 4.1.4.6 | PATCH | Ensure audit configuration files are owned by root] ***
+[0;32mok: [node] => (item=/etc/audit/auditd.conf)[0m
+[0;32mok: [node] => (item=/etc/audit/audit-stop.rules)[0m
+[0;32mok: [node] => (item=/etc/audit/audit.rules)[0m
+[0;32mok: [node] => (item=/etc/audit/plugins.d/af_unix.conf)[0m
+[0;32mok: [node] => (item=/etc/audit/rules.d/audit.rules)[0m
+
+TASK [RHEL9-CIS : 4.1.4.7 | PATCH | Ensure audit configuration files belong to group root] ***
+[0;32mok: [node] => (item=/etc/audit/auditd.conf)[0m
+[0;32mok: [node] => (item=/etc/audit/audit-stop.rules)[0m
+[0;32mok: [node] => (item=/etc/audit/audit.rules)[0m
+[0;32mok: [node] => (item=/etc/audit/plugins.d/af_unix.conf)[0m
+[0;32mok: [node] => (item=/etc/audit/rules.d/audit.rules)[0m
+
+TASK [RHEL9-CIS : 4.1.4.8 | AUDIT | Get audit binary file stat | get current mode] ***
+[0;32mok: [node] => (item=/sbin/auditctl)[0m
+[0;32mok: [node] => (item=/sbin/aureport)[0m
+[0;32mok: [node] => (item=/sbin/ausearch)[0m
+[0;32mok: [node] => (item=/sbin/autrace)[0m
+[0;32mok: [node] => (item=/sbin/auditd)[0m
+[0;32mok: [node] => (item=/sbin/augenrules)[0m
+
+TASK [RHEL9-CIS : 4.1.4.8 | PATCH | Ensure audit tools are 755 or more restrictive | set if required] ***
+[0;32mok: [node] => (item=/sbin/auditctl)[0m
+[0;32mok: [node] => (item=/sbin/aureport)[0m
+[0;32mok: [node] => (item=/sbin/ausearch)[0m
+[0;36mskipping: [node] => (item=/sbin/autrace) [0m
+[0;32mok: [node] => (item=/sbin/auditd)[0m
+[0;32mok: [node] => (item=/sbin/augenrules)[0m
+
+TASK [RHEL9-CIS : 4.1.4.9 | PATCH | Ensure audit tools are owned by root] ******
+[0;32mok: [node] => (item=/sbin/auditctl)[0m
+[0;32mok: [node] => (item=/sbin/aureport)[0m
+[0;32mok: [node] => (item=/sbin/ausearch)[0m
+[0;32mok: [node] => (item=/sbin/autrace)[0m
+[0;32mok: [node] => (item=/sbin/auditd)[0m
+[0;32mok: [node] => (item=/sbin/augenrules)[0m
+
+TASK [RHEL9-CIS : 4.1.4.10 | PATCH | Ensure audit tools belong to group root] ***
+[0;32mok: [node] => (item=/sbin/auditctl)[0m
+[0;32mok: [node] => (item=/sbin/aureport)[0m
+[0;32mok: [node] => (item=/sbin/ausearch)[0m
+[0;32mok: [node] => (item=/sbin/autrace)[0m
+[0;32mok: [node] => (item=/sbin/auditd)[0m
+[0;32mok: [node] => (item=/sbin/augenrules)[0m
+
+TASK [RHEL9-CIS : 4.2.1.1 | PATCH | Ensure rsyslog installed] ******************
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 4.2.1.2 | PATCH | Ensure rsyslog Service is enabled] *********
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 4.2.1.3 | PATCH | Ensure journald is configured to send logs to rsyslog] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 4.2.1.4 | PATCH | Ensure rsyslog default file permissions configured] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 4.2.1.5 | AUDIT | Ensure logging is configured | rsyslog current config message out] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 4.2.1.5 | AUDIT | Ensure logging is configured | rsyslog current config message out] ***
+[0;32mok: [node] => {[0m
+[0;32m    "msg": [[0m
+[0;32m        "These are the current logging configurations for rsyslog, please review:",[0m
+[0;32m        [[0m
+[0;32m            "global(workDirectory=\"/var/lib/rsyslog\")",[0m
+[0;32m            "module(load=\"builtin:omfile\" Template=\"RSYSLOG_TraditionalFileFormat\")",[0m
+[0;32m            "module(load=\"imuxsock\" \t  # provides support for local system logging (e.g. via logger command)",[0m
+[0;32m            "       SysSock.Use=\"off\") # Turn off message reception via local log socket; ",[0m
+[0;32m            "\t\t\t  # local messages are retrieved through imjournal now.",[0m
+[0;32m            "module(load=\"imjournal\" \t    # provides access to the systemd journal",[0m
+[0;32m            "       UsePid=\"system\" # PID nummber is retrieved as the ID of the process the journal entry originates from",[0m
+[0;32m            "       FileCreateMode=\"0644\" # Set the access permissions for the state file",[0m
+[0;32m            "       StateFile=\"imjournal.state\") # File to store the position in the journal",[0m
+[0;32m            "include(file=\"/etc/rsyslog.d/*.conf\" mode=\"optional\")",[0m
+[0;32m            "*.info;mail.none;authpriv.none;cron.none                /var/log/messages",[0m
+[0;32m            "authpriv.*                                              /var/log/secure",[0m
+[0;32m            "mail.*                                                  -/var/log/maillog",[0m
+[0;32m            "cron.*                                                  /var/log/cron",[0m
+[0;32m            "*.emerg                                                 :omusrmsg:*",[0m
+[0;32m            "uucp,news.crit                                          /var/log/spooler",[0m
+[0;32m            "local7.*                                                /var/log/boot.log",[0m
+[0;32m            "$FileCreateMode 0640"[0m
+[0;32m        ][0m
+[0;32m    ][0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : 4.2.1.5 | PATCH | Ensure logging is configured | mail.* log setting] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 4.2.1.5 | PATCH | Ensure logging is configured | news.crit log setting] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 4.2.1.5 | PATCH | Ensure logging is configured | Misc. log setting] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 4.2.1.5 | PATCH | Ensure logging is configured | Local log settings] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 4.2.1.5 | PATCH | Ensure logging is configured | Auth Settings] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 4.2.1.5 | PATCH | Ensure logging is configured | Cron Settings] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 4.2.1.6 | PATCH | Ensure rsyslog is configured to send logs to a remote log host] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 4.2.1.7 | PATCH | Ensure rsyslog is not configured to recieve logs from a remote client. | When not log host] ***
+[0;32mok: [node] => (item=^(\$ModLoad imtcp))[0m
+[0;32mok: [node] => (item=^(\$InputTCPServerRun))[0m
+[0;32mok: [node] => (item=^(module\(load="imtcp"\)))[0m
+[0;32mok: [node] => (item=^(input\(type="imtcp"))[0m
+
+TASK [RHEL9-CIS : 4.2.1.7 | PATCH | Ensure rsyslog is not configured to recieve logs from a remote clients. | When log host] ***
+[0;36mskipping: [node] => (item=ModLoad imtcp) [0m
+[0;36mskipping: [node] => (item=InputTCPServerRun) [0m
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 4.2.2.1.1 | PATCH | Ensure systemd-journal-remote is installed] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 4.2.2.1.2 | PATCH | Ensure systemd-journal-remote is configured] ***
+[0;36mskipping: [node] => (item={'regexp': 'URL=', 'line': 'URL=192.168.50.42'}) [0m
+[0;36mskipping: [node] => (item={'regexp': 'ServerKeyFile=', 'line': 'ServerKeyFile=/etc/ssl/private/journal-upload.pem'}) [0m
+[0;36mskipping: [node] => (item={'regexp': 'ServerCertificateFile=', 'line': 'ServerCertificateFile=/etc/ssl/certs/journal-upload.pem'}) [0m
+[0;36mskipping: [node] => (item={'regexp': 'TrustedCertificateFile=', 'line': 'TrustedCertificateFile=/etc/ssl/ca/trusted.pem'}) [0m
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 4.2.2.1.3 | PATCH | Ensure systemd-journal-remote is enabled] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 4.2.2.1.4 | PATCH | Ensure journald is not configured to recieve logs from a remote client] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 4.2.2.2 | PATCH | Ensure journald service is enabled | Enable service] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 4.2.2.2 | AUDIT | Ensure journald service is enabled | Capture status] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 4.2.2.2 | AUDIT | Ensure journald service is enabled | Alert on bad status] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 4.2.2.2 | AUDIT | Set fact for manual task warning.] *********
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 4.2.2.3 | PATCH | Ensure journald is configured to compress large log files] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 4.2.2.4 | PATCH | Ensure journald is configured to write logfiles to persistent disk] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 4.2.2.5 | PATCH | Ensure journald is not configured to send logs to rsyslog] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 4.2.2.6 | PATCH | Ensure journald log rotation is configured per site policy] ***
+[0;36mskipping: [node] => (item={'regexp': '^#SystemMaxUse=|^SystemMaxUse=', 'line': 'SystemMaxUse=10M'}) [0m
+[0;36mskipping: [node] => (item={'regexp': '^#SystemKeepFree=|^SystemKeepFree=', 'line': 'SystemKeepFree=100G'}) [0m
+[0;36mskipping: [node] => (item={'regexp': '^#RuntimeMaxUse=|^RuntimeMaxUse=', 'line': 'RuntimeMaxUse=10M'}) [0m
+[0;36mskipping: [node] => (item={'regexp': '^#RuntimeKeepFree=|^RuntimeKeepFree=', 'line': 'RuntimeKeepFree=100G'}) [0m
+[0;36mskipping: [node] => (item={'regexp': '^#MaxFileSec=|^MaxFileSec=', 'line': 'MaxFileSec=1month'}) [0m
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 4.2.2.7 | AUDIT | Ensure journald default file permissions configured | Check for override file] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 4.2.2.7 | AUDIT | Ensure journald default file permissions configured | Set live file] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 4.2.2.7 | PATCH | Ensure journald default file permissions configured | Set permission] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 4.2.3 | AUDIT | Ensure permissions on all logfiles are configured | find files] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 4.2.3 | PATCH | Ensure permissions on all logfiles are configured | change permissions] ***
+[0;33mchanged: [node] => (item=/var/log/hawkey.log)[0m
+[0;36mskipping: [node] => (item=/var/log/btmp) [0m
+[0;33mchanged: [node] => (item=/var/log/lastlog)[0m
+[0;33mchanged: [node] => (item=/var/log/secure)[0m
+[0;32mok: [node] => (item=/var/log/firewalld)[0m
+[0;32mok: [node] => (item=/var/log/kdump.log)[0m
+[0;36mskipping: [node] => (item=/var/log/wtmp) [0m
+[0;33mchanged: [node] => (item=/var/log/dnf.log)[0m
+[0;33mchanged: [node] => (item=/var/log/dnf.rpm.log)[0m
+[0;32mok: [node] => (item=/var/log/messages)[0m
+[0;32mok: [node] => (item=/var/log/tallylog)[0m
+[0;32mok: [node] => (item=/var/log/maillog)[0m
+[0;32mok: [node] => (item=/var/log/spooler)[0m
+[0;33mchanged: [node] => (item=/var/log/dnf.librepo.log)[0m
+[0;32mok: [node] => (item=/var/log/cron)[0m
+[0;32mok: [node] => (item=/var/log/audit/audit.log)[0m
+[0;33mchanged: [node] => (item=/var/log/leapp/leapp-report.json)[0m
+[0;33mchanged: [node] => (item=/var/log/leapp/leapp-report.txt)[0m
+[0;33mchanged: [node] => (item=/var/log/leapp/dnf-plugin-data.txt)[0m
+[0;33mchanged: [node] => (item=/var/log/leapp/answerfile)[0m
+[0;33mchanged: [node] => (item=/var/log/leapp/leapp-upgrade.log)[0m
+[0;33mchanged: [node] => (item=/var/log/leapp/answerfile.userchoices)[0m
+[0;33mchanged: [node] => (item=/var/log/leapp/archive/leapp-20230601120513-logs.tar.gz)[0m
+[0;33mchanged: [node] => (item=/var/log/leapp/archive/leapp-20230601124151-logs.tar.gz)[0m
+[0;33mchanged: [node] => (item=/var/log/leapp/archive/leapp-20230601125111-logs.tar.gz)[0m
+[0;33mchanged: [node] => (item=/var/log/leapp/archive/leapp-20230601122451-logs.tar.gz)[0m
+[0;33mchanged: [node] => (item=/var/log/leapp/archive/leapp-20230601124339-logs.tar.gz)[0m
+[0;32mok: [node] => (item=/var/log/sssd/sssd_implicit_files.log)[0m
+[0;32mok: [node] => (item=/var/log/sssd/sssd.log-20230601)[0m
+[0;32mok: [node] => (item=/var/log/sssd/sssd.log)[0m
+[0;32mok: [node] => (item=/var/log/sssd/sssd_nss.log-20230601)[0m
+[0;32mok: [node] => (item=/var/log/sssd/sssd_implicit_files.log-20230601)[0m
+[0;32mok: [node] => (item=/var/log/sssd/sssd_nss.log)[0m
+[0;32mok: [node] => (item=/var/log/aide/aide.log)[0m
+[0;33mchanged: [node] => (item=/var/log/amazon/ssm/hibernate.log)[0m
+[0;33mchanged: [node] => (item=/var/log/amazon/ssm/errors.log)[0m
+[0;33mchanged: [node] => (item=/var/log/amazon/ssm/amazon-ssm-agent.log)[0m
+[0;32mok: [node] => (item=/var/log/amazon/ssm/audits/amazon-ssm-agent-audit-2023-06-23)[0m
+[0;32mok: [node] => (item=/var/log/amazon/ssm/audits/amazon-ssm-agent-audit-2022-11-09)[0m
+[0;32mok: [node] => (item=/var/log/amazon/ssm/audits/amazon-ssm-agent-audit-2022-11-08)[0m
+[0;32mok: [node] => (item=/var/log/amazon/ssm/audits/amazon-ssm-agent-audit-2023-06-01)[0m
+[0;32mok: [node] => (item=/var/log/amazon/ssm/audits/amazon-ssm-agent-audit-2024-09-24)[0m
+[0;32mok: [node] => (item=/var/log/journal/9b8e90b8d27d431c89f877b3ed235cd4/user-1000.journal)[0m
+[0;32mok: [node] => (item=/var/log/journal/9b8e90b8d27d431c89f877b3ed235cd4/system.journal)[0m
+[0;32mok: [node] => (item=/var/log/journal/9b8e90b8d27d431c89f877b3ed235cd4/system@729dcd7f465a4974bead67d5259b0298-0000000000000001-0005fd14c2e94129.journal)[0m
+[0;32mok: [node] => (item=/var/log/journal/9b8e90b8d27d431c89f877b3ed235cd4/user-1000@6f12340ea3e44ed585ad279f2fc689a6-000000000000087e-0005fd14ee0b35d3.journal)[0m
+[0;32mok: [node] => (item=/var/log/anaconda/X.log)[0m
+[0;32mok: [node] => (item=/var/log/anaconda/hawkey.log)[0m
+[0;32mok: [node] => (item=/var/log/anaconda/dbus.log)[0m
+[0;32mok: [node] => (item=/var/log/anaconda/ks-script-llc094mc.log)[0m
+[0;32mok: [node] => (item=/var/log/anaconda/storage.log)[0m
+[0;32mok: [node] => (item=/var/log/anaconda/anaconda.log)[0m
+[0;32mok: [node] => (item=/var/log/anaconda/ks-script-bd_m0sv1.log)[0m
+[0;32mok: [node] => (item=/var/log/anaconda/program.log)[0m
+[0;32mok: [node] => (item=/var/log/anaconda/lvm.log)[0m
+[0;32mok: [node] => (item=/var/log/anaconda/syslog)[0m
+[0;32mok: [node] => (item=/var/log/anaconda/journal.log)[0m
+[0;32mok: [node] => (item=/var/log/anaconda/ks-script-nlp3miae.log)[0m
+[0;32mok: [node] => (item=/var/log/anaconda/dnf.librepo.log)[0m
+[0;32mok: [node] => (item=/var/log/anaconda/packaging.log)[0m
+[0;33mchanged: [node] => (item=/var/log/tuned/tuned.log)[0m
+
+TASK [RHEL9-CIS : 4.3 | PATCH | Ensure logrotate is configured | installed] ****
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 4.3 | PATCH | Ensure logrotate is configured | scheduled] ****
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 4.3 | PATCH | Ensure logrotate is configured | set default conf] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 4.3 | AUDIT | Ensure logrotate is configured | Get non default logrotate settings] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 4.3 | AUDIT | Ensure logrotate is configured | generate file list] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 4.3 | AUDIT | Ensure logrotate is configured | List configured files] ***
+[0;32mok: [node] => (item={'path': '/etc/logrotate.d/btmp', 'mode': '0644', 'isdir': False, 'ischr': False, 'isblk': False, 'isreg': True, 'isfifo': False, 'islnk': False, 'issock': False, 'uid': 0, 'gid': 0, 'size': 130, 'inode': 527284, 'dev': 64512, 'nlink': 1, 'atime': 1727213131.4839666, 'mtime': 1571055031.0, 'ctime': 1685640569.6130025, 'gr_name': 'root', 'pw_name': 'root', 'wusr': True, 'rusr': True, 'xusr': False, 'wgrp': False, 'rgrp': True, 'xgrp': False, 'woth': False, 'roth': True, 'xoth': False, 'isuid': False, 'isgid': False}) => {[0m
+[0;32m    "msg": "\"Warning!! The following files are not covered by default logrotate settings ensure they match site policy\"\n\"/etc/logrotate.d/btmp, /etc/logrotate.d/dnf, /etc/logrotate.d/firewalld, /etc/logrotate.d/wtmp, /etc/logrotate.d/sssd, /etc/logrotate.d/aide\"\n"[0m
+[0;32m}[0m
+[0;32mok: [node] => (item={'path': '/etc/logrotate.d/dnf', 'mode': '0644', 'isdir': False, 'ischr': False, 'isblk': False, 'isreg': True, 'isfifo': False, 'islnk': False, 'issock': False, 'uid': 0, 'gid': 0, 'size': 88, 'inode': 524395, 'dev': 64512, 'nlink': 1, 'atime': 1662722473.0, 'mtime': 1662722473.0, 'ctime': 1727213820.6890585, 'gr_name': 'root', 'pw_name': 'root', 'wusr': True, 'rusr': True, 'xusr': False, 'wgrp': False, 'rgrp': True, 'xgrp': False, 'woth': False, 'roth': True, 'xoth': False, 'isuid': False, 'isgid': False}) => {[0m
+[0;32m    "msg": "\"Warning!! The following files are not covered by default logrotate settings ensure they match site policy\"\n\"/etc/logrotate.d/btmp, /etc/logrotate.d/dnf, /etc/logrotate.d/firewalld, /etc/logrotate.d/wtmp, /etc/logrotate.d/sssd, /etc/logrotate.d/aide\"\n"[0m
+[0;32m}[0m
+[0;32mok: [node] => (item={'path': '/etc/logrotate.d/firewalld', 'mode': '0644', 'isdir': False, 'ischr': False, 'isblk': False, 'isreg': True, 'isfifo': False, 'islnk': False, 'issock': False, 'uid': 0, 'gid': 0, 'size': 93, 'inode': 527451, 'dev': 64512, 'nlink': 1, 'atime': 1712586370.0, 'mtime': 1712586370.0, 'ctime': 1727213929.6309159, 'gr_name': 'root', 'pw_name': 'root', 'wusr': True, 'rusr': True, 'xusr': False, 'wgrp': False, 'rgrp': True, 'xgrp': False, 'woth': False, 'roth': True, 'xoth': False, 'isuid': False, 'isgid': False}) => {[0m
+[0;32m    "msg": "\"Warning!! The following files are not covered by default logrotate settings ensure they match site policy\"\n\"/etc/logrotate.d/btmp, /etc/logrotate.d/dnf, /etc/logrotate.d/firewalld, /etc/logrotate.d/wtmp, /etc/logrotate.d/sssd, /etc/logrotate.d/aide\"\n"[0m
+[0;32m}[0m
+[0;32mok: [node] => (item={'path': '/etc/logrotate.d/wtmp', 'mode': '0644', 'isdir': False, 'ischr': False, 'isblk': False, 'isreg': True, 'isfifo': False, 'islnk': False, 'issock': False, 'uid': 0, 'gid': 0, 'size': 145, 'inode': 527440, 'dev': 64512, 'nlink': 1, 'atime': 1727213131.4859667, 'mtime': 1571055031.0, 'ctime': 1685640569.6130025, 'gr_name': 'root', 'pw_name': 'root', 'wusr': True, 'rusr': True, 'xusr': False, 'wgrp': False, 'rgrp': True, 'xgrp': False, 'woth': False, 'roth': True, 'xoth': False, 'isuid': False, 'isgid': False}) => {[0m
+[0;32m    "msg": "\"Warning!! The following files are not covered by default logrotate settings ensure they match site policy\"\n\"/etc/logrotate.d/btmp, /etc/logrotate.d/dnf, /etc/logrotate.d/firewalld, /etc/logrotate.d/wtmp, /etc/logrotate.d/sssd, /etc/logrotate.d/aide\"\n"[0m
+[0;32m}[0m
+[0;32mok: [node] => (item={'path': '/etc/logrotate.d/sssd', 'mode': '0644', 'isdir': False, 'ischr': False, 'isblk': False, 'isreg': True, 'isfifo': False, 'islnk': False, 'issock': False, 'uid': 0, 'gid': 0, 'size': 289, 'inode': 527111, 'dev': 64512, 'nlink': 1, 'atime': 1721811841.0, 'mtime': 1721811841.0, 'ctime': 1727213923.1879232, 'gr_name': 'root', 'pw_name': 'root', 'wusr': True, 'rusr': True, 'xusr': False, 'wgrp': False, 'rgrp': True, 'xgrp': False, 'woth': False, 'roth': True, 'xoth': False, 'isuid': False, 'isgid': False}) => {[0m
+[0;32m    "msg": "\"Warning!! The following files are not covered by default logrotate settings ensure they match site policy\"\n\"/etc/logrotate.d/btmp, /etc/logrotate.d/dnf, /etc/logrotate.d/firewalld, /etc/logrotate.d/wtmp, /etc/logrotate.d/sssd, /etc/logrotate.d/aide\"\n"[0m
+[0;32m}[0m
+[0;32mok: [node] => (item={'path': '/etc/logrotate.d/aide', 'mode': '0644', 'isdir': False, 'ischr': False, 'isblk': False, 'isreg': True, 'isfifo': False, 'islnk': False, 'issock': False, 'uid': 0, 'gid': 0, 'size': 155, 'inode': 524025, 'dev': 64512, 'nlink': 1, 'atime': 1727213131.4919667, 'mtime': 1651827218.0, 'ctime': 1727213112.144936, 'gr_name': 'root', 'pw_name': 'root', 'wusr': True, 'rusr': True, 'xusr': False, 'wgrp': False, 'rgrp': True, 'xgrp': False, 'woth': False, 'roth': True, 'xoth': False, 'isuid': False, 'isgid': False}) => {[0m
+[0;32m    "msg": "\"Warning!! The following files are not covered by default logrotate settings ensure they match site policy\"\n\"/etc/logrotate.d/btmp, /etc/logrotate.d/dnf, /etc/logrotate.d/firewalld, /etc/logrotate.d/wtmp, /etc/logrotate.d/sssd, /etc/logrotate.d/aide\"\n"[0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : 4.3 | AUDIT | Set fact for manual task warning.] *************
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 5.1.1 | PATCH | Ensure cron daemon is enabled] ***************
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 5.1.2 | PATCH | Ensure permissions on /etc/crontab are configured] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.1.3 | PATCH | Ensure permissions on /etc/cron.hourly are configured] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.1.4 | PATCH | Ensure permissions on /etc/cron.daily are configured] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.1.5 | PATCH | Ensure permissions on /etc/cron.weekly are configured] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.1.6 | PATCH | Ensure permissions on /etc/cron.monthly are configured] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.1.7 | PATCH | Ensure permissions on /etc/cron.d are configured] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.1.8 | PATCH | Ensure cron is restricted to authorized users | Remove cron.deny] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.1.8 | PATCH | Ensure cron is restricted to authorized users | Check if cron.allow exists] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 5.1.8 | PATCH | Ensure cron is restricted to authorized users | Ensure cron.allow is restricted to authorized users] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.1.9 | PATCH | Ensure at is restricted to authorized users | Remove at.deny] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 5.1.9 | PATCH | Ensure at is restricted to authorized users | Check if at.allow exists] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 5.1.9 | PATCH | Ensure at is restricted to authorized users | Ensure at.allow is restricted to authorized users] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.2.1 | PATCH | Ensure permissions on /etc/ssh/sshd_config are configured] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 5.2.2 | AUDIT | Ensure permissions on SSH private host key files are configured | Find the SSH private host keys] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 5.2.2 | PATCH | Ensure permissions on SSH private host key files are configured | Set permissions on SSH private host keys] ***
+[0;33mchanged: [node] => (item=/etc/ssh/ssh_host_ecdsa_key)[0m
+[0;33mchanged: [node] => (item=/etc/ssh/ssh_host_ed25519_key)[0m
+[0;33mchanged: [node] => (item=/etc/ssh/ssh_host_rsa_key)[0m
+
+TASK [RHEL9-CIS : 5.2.3 | AUDIT | Ensure permissions on SSH public host key files are configured | Find the SSH public host keys] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 5.2.3 | PATCH | Ensure permissions on SSH public host key files are configured | Set permissions on SSH public host keys] ***
+[0;32mok: [node] => (item=/etc/ssh/ssh_host_ecdsa_key.pub)[0m
+[0;32mok: [node] => (item=/etc/ssh/ssh_host_rsa_key.pub)[0m
+[0;32mok: [node] => (item=/etc/ssh/ssh_host_ed25519_key.pub)[0m
+
+TASK [RHEL9-CIS : 5.2.4 | PATCH | Ensure SSH access is limited | Add line to sshd_config for allowusers] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 5.2.4 | PATCH | Ensure SSH access is limited | Add line to sshd_config for allowgroups] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 5.2.4 | PATCH | Ensure SSH access is limited | Add line to sshd_config for denyusers] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.2.4 | PATCH | Ensure SSH access is limited | Add line to sshd_config for denygroups] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 5.2.5 | PATCH | Ensure SSH LogLevel is appropriate] **********
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.2.6 | PATCH | Ensure SSH PAM is enabled] *******************
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 5.2.7 | PATCH | Ensure SSH root login is disabled | config file] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.2.7 | PATCH | Ensure SSH root login is disabled | override file] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 5.2.8 | PATCH | Ensure SSH HostbasedAuthentication is disabled] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.2.9 | PATCH | Ensure SSH PermitEmptyPasswords is disabled] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.2.10 | PATCH | Ensure SSH PermitUserEnvironment is disabled] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.2.11 | PATCH | Ensure SSH IgnoreRhosts is enabled] *********
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.2.12 | PATCH | Ensure SSH X11 forwarding is disabled | config file] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.2.12 | PATCH | Ensure SSH X11 forwarding is disabled | override] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.2.13 | PATCH | Ensure SSH AllowTcpForwarding is disabled] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.2.14 | AUDIT | Ensure system-wide crypto policy is not over-ridden] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 5.2.14 | PATCH | Ensure system-wide crypto policy is not over-ridden] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 5.2.15 | PATCH | Ensure SSH warning banner is configured] ****
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.2.16 | PATCH | Ensure SSH MaxAuthTries is set to 4 or less] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.2.17 | PATCH | Ensure SSH MaxStartups is configured] *******
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.2.18 | PATCH | Ensure SSH MaxSessions is set to 10 or less] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.2.19 | PATCH | Ensure SSH LoginGraceTime is set to one minute or less] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.2.20 | PATCH | Ensure SSH Idle Timeout Interval is configured | Add line in sshd_config for ClientAliveInterval] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.2.20 | PATCH | Ensure SSH Idle Timeout Interval is configured | Ensure SSH ClientAliveCountMax set to <= 3] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.3.1 | PATCH | Ensure sudo is installed] ********************
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 5.3.2 | PATCH | Ensure sudo commands use pty] ****************
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.3.3 | PATCH | Ensure sudo log file exists] *****************
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.3.4 | PATCH | Ensure users must provide password for escalation] ***
+[0;33mchanged: [node] => (item=/etc/sudoers)[0m
+
+TASK [RHEL9-CIS : 5.3.5 | PATCH | Ensure re-authentication for privilege escalation is not disabled globally] ***
+[0;32mok: [node] => (item=/etc/sudoers)[0m
+
+TASK [RHEL9-CIS : 5.3.6 | AUDIT | Ensure sudo authentication timeout is configured correctly | Get files with timeout set] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 5.3.6 | PATCH | Ensure sudo authentication timeout is configured correctly | Set value if no results] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.3.6 | PATCH | Ensure sudo authentication timeout is configured correctly | Set value if has results] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 5.3.7 | PATCH | Ensure access to the su command is restricted | Ensure sugroup exists] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.3.7 | PATCH | Ensure access to the su command is restricted | remove users from group] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 5.3.7 | PATCH | Ensure access to the su command is restricted | Setting pam_wheel to use_uid] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.4.1 | AUDIT | Ensure custom authselect profile is used | Gather profiles] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 5.4.1 | PATCH | Ensure custom authselect profile is used | Create custom profiles] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 5.4.1 | PATCH | Ensure custom authselect profile is used | Force custom profile creates backup] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 5.4.2 | AUDIT | Ensure authselect includes with-faillock | Gather profiles and enabled features] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 5.4.2 | AUDIT | Ensure authselect includes with-faillock | Show profiles] ***
+[0;32mok: [node] => {[0m
+[0;32m    "msg": [[0m
+[0;32m        "Below are the current custom profiles",[0m
+[0;32m        [][0m
+[0;32m    ][0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : 5.4.2 | PATCH | Ensure authselect includes with-faillock | Authselect add options] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 5.4.2 | PATCH | Ensure authselect includes with-faillock | not Authselect profile"] ***
+[0;36mskipping: [node] => (item={'regexp': '^auth\\s+required\\s+pam_faillock.so preauth silent deny=.*unlock_time=.*', 'line': 'auth            required       pam_faillock.so preauth silent deny=5 unlock_time=900', 'before': '^auth\\s+sufficient\\s+pam_unix.so try_first_pass'}) [0m
+[0;36mskipping: [node] => (item={'regexp': '^auth\\s+required\\s+pam_faillock.so authfail deny=.*unlock_time=.*', 'line': 'auth            required       pam_faillock.so authfail deny=5 unlock_time=900', 'before': '^auth\\s+required\\s+pam_deny.so'}) [0m
+[0;36mskipping: [node] => (item={'regexp': '^account\\s+required\\s+pam_faillock.so', 'line': 'account      required       pam_faillock.so', 'before': '^account     required      pam_unix.so'}) [0m
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 5.4.2 | PATCH | Ensure authselect includes with-faillock | not Authselect profile"] ***
+[0;36mskipping: [node] => (item={'regexp': '^auth\\s+required\\s+pam_faillock.so preauth silent deny=.*unlock_time=.*', 'line': 'auth        required      pam_faillock.so preauth silent deny=5 unlock_time=900', 'before': '^auth\\s+sufficient\\s+pam_unix.so try_first_pass'}) [0m
+[0;36mskipping: [node] => (item={'regexp': '^auth\\s+required\\s+pam_faillock.so authfail deny=.*unlock_time=.*', 'line': 'auth        required      pam_faillock.so authfail deny=5 unlock_time=900', 'before': '^auth\\s+required\\s+pam_deny.so'}) [0m
+[0;36mskipping: [node] => (item={'regexp': '^account\\s+required\\s+pam_faillock.so', 'line': 'account     required      pam_faillock.so', 'before': '^account     required      pam_unix.so'}) [0m
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 5.5.1 | PATCH | Ensure password creation requirements are configured | Set pwquality config settings] ***
+[0;33mchanged: [node] => (item={'name': 'minlen', 'value': '14'})[0m
+[0;33mchanged: [node] => (item={'name': 'minclass', 'value': '4'})[0m
+
+TASK [RHEL9-CIS : 5.5.1 | PATCH | Ensure password creation requirements are configured | Set system-auth retry settings | not Authselect] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.5.1 | PATCH | Ensure password creation requirements are configured | Set password-auth retry settings | not Authselect] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.5.2 | PATCH | Ensure lockout for failed password attempts is configured | Set faillock.conf configs] ***
+[0;33mchanged: [node] => (item={'regexp': '^\\s*deny\\s*=\\s*[1-5]\\b', 'line': 'deny = 5'})[0m
+[0;33mchanged: [node] => (item={'regexp': '^\\s*unlock_time\\s*=\\s*(0|9[0-9][0-9]|[1-9][0-9][0-9][0-9]+)\\b', 'line': 'unlock_time = 900'})[0m
+
+TASK [RHEL9-CIS : 5.5.2 | PATCH | Ensure lockout for failed password attempts is configured | Set preauth] ***
+[0;33mchanged: [node] => (item=/etc/pam.d/system-auth)[0m
+[0;33mchanged: [node] => (item=/etc/pam.d/password-auth)[0m
+
+TASK [RHEL9-CIS : 5.5.2 | PATCH | Ensure lockout for failed password attempts is configured | Set authfail] ***
+[0;33mchanged: [node] => (item=/etc/pam.d/system-auth)[0m
+[0;33mchanged: [node] => (item=/etc/pam.d/password-auth)[0m
+
+TASK [RHEL9-CIS : 5.5.2 | PATCH | Ensure lockout for failed password attempts is configured | Load account faillock.so] ***
+[0;33mchanged: [node] => (item=/etc/pam.d/system-auth)[0m
+[0;33mchanged: [node] => (item=/etc/pam.d/password-auth)[0m
+
+TASK [RHEL9-CIS : 5.5.3 | PATCH | Ensure password reuse is limited | Set system-auth remember Settings] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.5.3 | PATCH | Ensure password reuse is limited | Set password-auth remember Settings] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.5.4 | PATCH | Ensure password hashing algorithm is SHA-512 | libuser.conf] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 5.5.4 | PATCH | Ensure password hashing algorithm is SHA-512 | login.defs] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 5.5.4 | PATCH | Ensure password hashing algorithm is SHA-512 | password-auth] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.5.4 | PATCH | Ensure password hashing algorithm is SHA-512 | system-auth] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.5.1 | PATCH | Ensure password creation requirements are configured | Set pwquality config settings] ***
+[0;36mskipping: [node] => (item={'name': 'minlen', 'value': '14'}) [0m
+[0;36mskipping: [node] => (item={'name': 'minclass', 'value': '4'}) [0m
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 5.5.1 | PATCH | Ensure password creation requirements are configured | Set system-auth retry settings | not Authselect] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 5.5.1 | PATCH | Ensure password creation requirements are configured | Set password-auth retry settings | not Authselect] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 5.5.2 | PATCH | Ensure lockout for failed password attempts is configured | Set faillock.conf configs] ***
+[0;36mskipping: [node] => (item={'regexp': '^\\s*deny\\s*=\\s*[1-5]\\b', 'line': 'deny = 5'}) [0m
+[0;36mskipping: [node] => (item={'regexp': '^\\s*unlock_time\\s*=\\s*(0|9[0-9][0-9]|[1-9][0-9][0-9][0-9]+)\\b', 'line': 'unlock_time = 900'}) [0m
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 5.5.2 | PATCH | Ensure lockout for failed password attempts is configured | Set preauth] ***
+[0;36mskipping: [node] => (item=/etc/authselect/custom/custom-profile/system-auth) [0m
+[0;36mskipping: [node] => (item=/etc/authselect/custom/custom-profile/password-auth) [0m
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 5.5.2 | PATCH | Ensure lockout for failed password attempts is configured | Set authfail] ***
+[0;36mskipping: [node] => (item=/etc/authselect/custom/custom-profile/system-auth) [0m
+[0;36mskipping: [node] => (item=/etc/authselect/custom/custom-profile/password-auth) [0m
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 5.5.2 | PATCH | Ensure lockout for failed password attempts is configured | Load account faillock.so] ***
+[0;36mskipping: [node] => (item=/etc/authselect/custom/custom-profile/system-auth) [0m
+[0;36mskipping: [node] => (item=/etc/authselect/custom/custom-profile/password-auth) [0m
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 5.5.3 | PATCH | Ensure password reuse is limited | Set system-auth remember Settings] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 5.5.3 | PATCH | Ensure password reuse is limited | Set password-auth remember Settings] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 5.5.4 | PATCH | Ensure password hashing algorithm is SHA-512 | libuser.conf] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 5.5.4 | PATCH | Ensure password hashing algorithm is SHA-512 | login.defs] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 5.5.4 | PATCH | Ensure password hashing algorithm is SHA-512 | password-auth] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 5.5.4 | PATCH | Ensure password hashing algorithm is SHA-512 | system-auth] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 5.6.1.1 | PATCH | Ensure password expiration is 365 days or less] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.6.1.1 | AUDIT | Ensure password expiration is 365 days or less | Get existing users PASS_MAX_DAYS] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 5.6.1.1 | PATCH | Ensure password expiration is 365 days or less | Set existing users PASS_MAX_DAYS] ***
+[0;36mskipping: [node] => (item=ec2-user) [0m
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 5.6.1.2 | PATCH | Ensure minimum days between password changes is configured | set login.defs] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.6.1.2 | AUDIT | Ensure minimum days between password changes is configured | Get existing users PASS_MIN_DAYS] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 5.6.1.2 | PATCH | Ensure minimum days between password changes is configured | Set existing users PASS_MIN_DAYS] ***
+[0;36mskipping: [node] => (item=ec2-user) [0m
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 5.6.1.3 | PATCH | Ensure password expiration warning days is 7 or more | set login.defs] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.6.1.3 | AUDIT | Ensure password expiration warning days is 7 or more | Get existing users WARN_DAYS] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 5.6.1.3 | PATCH | Ensure password expiration warning days is 7 or more | Set existing users WARN_DAYS] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 5.6.1.4 | AUDIT | Ensure inactive password lock is 30 days or less | Check current settings] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 5.6.1.4 | PATCH | Ensure inactive password lock is 30 days or less | Set default inactive setting] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.6.1.4 | AUDIT | Ensure inactive password lock is 30 days or less | Getting user list] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 5.6.1.4 | PATCH | Ensure inactive password lock is 30 days or less | Apply Inactive setting to existing accounts] ***
+[0;33mchanged: [node] => (item=ec2-user)[0m
+
+TASK [RHEL9-CIS : 5.6.1.5 | AUDIT | Ensure all users last password change date is in the past | Get current date in Unix Time] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 5.6.1.5 | AUDIT | Ensure all users last password change date is in the past | Get list of users with last changed pw date in the future] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 5.6.1.5 | AUDIT | Ensure all users last password change date is in the past | Alert on accounts with pw change in the future] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 5.6.1.5 | AUDIT | Set fact for manual task warning.] *********
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 5.6.1.5 | PATCH | Ensure all users last password change date is in the past | Fix accounts with pw change in the future] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 5.6.2 | PATCH | Ensure system accounts are secured | Set nologin] ***
+[0;36mskipping: [node] => (item=root) [0m
+[0;36mskipping: [node] => (item=bin) [0m
+[0;36mskipping: [node] => (item=daemon) [0m
+[0;36mskipping: [node] => (item=adm) [0m
+[0;36mskipping: [node] => (item=lp) [0m
+[0;36mskipping: [node] => (item=sync) [0m
+[0;36mskipping: [node] => (item=shutdown) [0m
+[0;36mskipping: [node] => (item=halt) [0m
+[0;36mskipping: [node] => (item=mail) [0m
+[0;36mskipping: [node] => (item=operator) [0m
+[0;36mskipping: [node] => (item=games) [0m
+[0;36mskipping: [node] => (item=ftp) [0m
+[0;36mskipping: [node] => (item=nobody) [0m
+[0;36mskipping: [node] => (item=dbus) [0m
+[0;36mskipping: [node] => (item=systemd-coredump) [0m
+[0;36mskipping: [node] => (item=systemd-resolve) [0m
+[0;36mskipping: [node] => (item=tss) [0m
+[0;36mskipping: [node] => (item=polkitd) [0m
+[0;36mskipping: [node] => (item=unbound) [0m
+[0;36mskipping: [node] => (item=sssd) [0m
+[0;36mskipping: [node] => (item=chrony) [0m
+[0;36mskipping: [node] => (item=sshd) [0m
+[0;36mskipping: [node] => (item=ec2-user) [0m
+[0;36mskipping: [node] => (item=systemd-oom) [0m
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 5.6.2 | PATCH | Ensure system accounts are secured | Lock accounts] ***
+[0;36mskipping: [node] => (item=root) [0m
+[0;36mskipping: [node] => (item=bin) [0m
+[0;36mskipping: [node] => (item=daemon) [0m
+[0;36mskipping: [node] => (item=adm) [0m
+[0;36mskipping: [node] => (item=lp) [0m
+[0;36mskipping: [node] => (item=sync) [0m
+[0;36mskipping: [node] => (item=shutdown) [0m
+[0;36mskipping: [node] => (item=halt) [0m
+[0;36mskipping: [node] => (item=mail) [0m
+[0;36mskipping: [node] => (item=operator) [0m
+[0;36mskipping: [node] => (item=games) [0m
+[0;36mskipping: [node] => (item=ftp) [0m
+[0;36mskipping: [node] => (item=nobody) [0m
+[0;36mskipping: [node] => (item=dbus) [0m
+[0;36mskipping: [node] => (item=systemd-coredump) [0m
+[0;36mskipping: [node] => (item=systemd-resolve) [0m
+[0;36mskipping: [node] => (item=tss) [0m
+[0;36mskipping: [node] => (item=polkitd) [0m
+[0;36mskipping: [node] => (item=unbound) [0m
+[0;36mskipping: [node] => (item=sssd) [0m
+[0;36mskipping: [node] => (item=chrony) [0m
+[0;36mskipping: [node] => (item=sshd) [0m
+[0;36mskipping: [node] => (item=ec2-user) [0m
+[0;36mskipping: [node] => (item=systemd-oom) [0m
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 5.6.3 | PATCH | Ensure default user shell timeout is 900 seconds or less] ***
+[0;33mchanged: [node] => (item={'path': '/etc/profile.d/tmout.sh', 'state': 'present'})[0m
+[0;32mok: [node] => (item={'path': '/etc/profile', 'state': 'absent'})[0m
+
+TASK [RHEL9-CIS : 5.6.4 | PATCH | Ensure default group for the root account is GID 0] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 5.6.5 | PATCH | Ensure default user umask is 027 or more restrictive | Set umask for /etc/login.defs pam_umask settings] ***
+[0;33mchanged: [node] => (item={'path': '/etc/bashrc', 'line': 'umask'})[0m
+[0;32mok: [node] => (item={'path': '/etc/profile', 'line': 'umask'})[0m
+[0;33mchanged: [node] => (item={'path': '/etc/login.defs', 'line': 'UMASK'})[0m
+
+TASK [RHEL9-CIS : 5.6.5 | PATCH | Ensure default user umask is 027 or more restrictive | Set umask for /etc/bashrc] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 5.6.5 | PATCH | Ensure default user umask is 027 or more restrictive | Add umask sessions for pamd] ***
+[0;33mchanged: [node] => (item=system-auth)[0m
+[0;33mchanged: [node] => (item=password-auth)[0m
+
+TASK [RHEL9-CIS : 5.6.5 | AUDIT | Ensure default user umask is 027 or more restrictive | update umask settings if required] ***
+[0;32mok: [node] => (item=system-auth)[0m
+[0;32mok: [node] => (item=password-auth)[0m
+
+TASK [RHEL9-CIS : 5.6.6 | PATCH | Ensure root password is set] *****************
+[0;32mok: [node] => {[0m
+[0;32m    "msg": "The root password has been set as per the assert in early stages"[0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : 6.1.1 | PATCH | Ensure permissions on /etc/passwd are configured] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 6.1.2 | PATCH | Ensure permissions on /etc/passwd- are configured] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 6.1.3 | PATCH | Ensure permissions on /etc/group are configured] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 6.1.4 | PATCH | Ensure permissions on /etc/group- are configured] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 6.1.5 | PATCH | Ensure permissions on /etc/shadow are configured] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 6.1.6 | PATCH | Ensure permissions on /etc/shadow- are configured] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 6.1.7 | PATCH | Ensure permissions on /etc/gshadow are configured] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 6.1.8 | PATCH | Ensure permissions on /etc/gshadow- are configured] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 6.1.9 | AUDIT | Ensure no world writable files exist | Get list of world-writable files] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 6.1.9 | PATCH | Ensure no world writable files exist | Adjust world-writable files if they exist (Configurable)] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 6.1.10 | AUDIT | Ensure no unowned files or directories exist | Finding all unowned files or directories] ***
+[0;32mok: [node] => (item=/)[0m
+[0;32mok: [node] => (item=/boot)[0m
+
+TASK [RHEL9-CIS : 6.1.10 | AUDIT | Ensure no unowned files or directories exist | Flatten no_user_items results for easier use] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 6.1.10 | AUDIT | Ensure no unowned files or directories exist | Displaying any unowned files or directories] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 6.1.10 | AUDIT | Set fact for manual task warning.] **********
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 6.1.11 | AUDIT | Ensure no ungrouped files or directories exist | Finding all ungrouped files or directories] ***
+[0;32mok: [node] => (item=/)[0m
+[0;32mok: [node] => (item=/boot)[0m
+
+TASK [RHEL9-CIS : 6.1.11 | AUDIT | Ensure no ungrouped files or directories exist | Flatten no_user_items results for easier use] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 6.1.11 | AUDIT | Ensure no ungrouped files or directories exist | Displaying all ungrouped files or directories] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 6.1.11 | AUDIT | Set fact for manual task warning.] **********
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 6.1.12 | PATCH | Ensure sticky bit is set on all world-writable directories] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 6.1.13 | AUDIT | Audit SUID executables | Find all SUID executables] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 6.1.13 | AUDIT | Audit SUID executables | Alert SUID executables exist] ***
+[0;32mok: [node] => {[0m
+[0;32m    "msg": "Warning!! SUID set on items in ['/usr/bin/newgrp', '/usr/bin/pkexec', '/usr/bin/crontab', '/usr/bin/su', '/usr/bin/passwd', '/usr/bin/sudo', '/usr/bin/gpasswd', '/usr/bin/chage', '/usr/bin/umount', '/usr/bin/mount', '/usr/lib/polkit-1/polkit-agent-helper-1', '/usr/libexec/dbus-1/dbus-daemon-launch-helper', '/usr/sbin/unix_chkpwd', '/usr/sbin/grub2-set-bootflag', '/usr/sbin/userhelper', '/usr/sbin/pam_timestamp_check']"[0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : 6.1.13 | AUDIT | Set fact for manual task warning.] **********
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 6.1.14 | AUDIT | Audit SGID executables | Find all SGID executables] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 6.1.14 | AUDIT | Audit SGID executables | Alert SGID executables exist] ***
+[0;32mok: [node] => {[0m
+[0;32m    "msg": "Warning!! SGID set on items in ['/usr/bin/write', '/usr/libexec/utempter/utempter', '/usr/libexec/openssh/ssh-keysign']"[0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : 6.1.14 | AUDIT | Set fact for manual task warning.] **********
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 6.1.15 | AUDIT | Audit system file permissions | Audit the packages] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 6.1.15 | AUDIT | Audit system file permissions | Add file discrepancy list to system] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : 6.1.15 | AUDIT | Audit system file permissions | Message out alert for package descrepancies] ***
+[0;32mok: [node] => {[0m
+[0;32m    "msg": "\"Warning!! You have some package descrepancies issues.\n The file list can be found in /var/tmp/rpm_file_check\"\n"[0m
+[0;32m}[0m
+
+TASK [RHEL9-CIS : 6.1.15 | AUDIT | Set fact for manual task warning.] **********
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 6.2.1 | AUDIT | Ensure accounts in /etc/passwd use shadowed passwords | discover] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 6.2.1 | AUDIT | Ensure accounts in /etc/passwd use shadowed passwords | Output] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 6.2.1 | AUDIT | Set fact for manual task warning.] ***********
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 6.2.2 | PATCH | Ensure password fields are not empty] ********
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 6.2.3 | AUDIT | Ensure all groups in /etc/passwd exist in /etc/group | Check /etc/passwd entries] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 6.2.3 | AUDIT | Ensure all groups in /etc/passwd exist in /etc/group | Print warning about users with invalid GIDs missing GID entries in /etc/group] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 6.2.3 | AUDIT | Set fact for manual task warning.] ***********
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 6.2.4 | AUDIT | Ensure no duplicate UIDs exist | Check for duplicate UIDs] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 6.2.4 | AUDIT | Ensure no duplicate UIDs exist | Print warning about users with duplicate UIDs] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 6.2.4 | AUDIT | Set fact for manual task warning.] ***********
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 6.2.5 | AUDIT | Ensure no duplicate GIDs exist | Check for duplicate GIDs] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 6.2.5 | AUDIT | Ensure no duplicate GIDs exist | Print warning about users with duplicate GIDs] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 6.2.5 | AUDIT | Set fact for manual task warning.] ***********
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 6.2.6 | AUDIT | Ensure no duplicate user names exist | Check for duplicate User Names] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 6.2.6 | AUDIT | Ensure no duplicate user names exist | Print warning about users with duplicate User Names] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 6.2.6 | AUDIT | Set fact for manual task warning.] ***********
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 6.2.7 | AUDIT | Ensure no duplicate group names exist | Check for duplicate group names] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 6.2.7 | AUDIT | Ensure no duplicate group names exist | Print warning about users with duplicate group names] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 6.2.7 | AUDIT | Set fact for manual task warning.] ***********
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 6.2.8 | AUDIT | Ensure root PATH Integrity | Get root paths] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 6.2.8 | AUDIT | Ensure root PATH Integrity | Get root paths] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 6.2.8 | AUDIT | Ensure root PATH Integrity | Set fact] *******
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 6.2.8 | AUDIT | Ensure root PATH Integrity | Check for empty dirs] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 6.2.8 | AUDIT | Ensure root PATH Integrity | Check for trailing ':'] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 6.2.8 | AUDIT | Ensure root PATH Integrity | Check for owner and permissions] ***
+[0;32mok: [node] => (item=/root/.local/bin)[0m
+[0;32mok: [node] => (item=/root/bin)[0m
+[0;32mok: [node] => (item=/usr/local/sbin)[0m
+[0;32mok: [node] => (item=/sbin)[0m
+[0;32mok: [node] => (item=/bin)[0m
+[0;32mok: [node] => (item=/usr/sbin)[0m
+[0;32mok: [node] => (item=/usr/bin)[0m
+
+TASK [RHEL9-CIS : 6.2.8 | AUDIT | Ensure root PATH Integrity | Set permissions] ***
+[0;36mskipping: [node] => (item={'changed': False, 'stat': {'exists': False}, 'invocation': {'module_args': {'path': '/root/.local/bin', 'follow': False, 'get_checksum': True, 'get_mime': True, 'get_attributes': True, 'checksum_algorithm': 'sha1'}}, 'failed': False, 'item': '/root/.local/bin', 'ansible_loop_var': 'item'}) [0m
+[0;36mskipping: [node] => (item={'changed': False, 'stat': {'exists': False}, 'invocation': {'module_args': {'path': '/root/bin', 'follow': False, 'get_checksum': True, 'get_mime': True, 'get_attributes': True, 'checksum_algorithm': 'sha1'}}, 'failed': False, 'item': '/root/bin', 'ansible_loop_var': 'item'}) [0m
+[0;36mskipping: [node] => (item={'changed': False, 'stat': {'exists': True, 'path': '/usr/local/sbin', 'mode': '0755', 'isdir': True, 'ischr': False, 'isblk': False, 'isreg': False, 'isfifo': False, 'islnk': False, 'issock': False, 'uid': 0, 'gid': 0, 'size': 4096, 'inode': 263556, 'dev': 64512, 'nlink': 2, 'atime': 1727213497.1679778, 'mtime': 1641802315.0, 'ctime': 1685639873.3390076, 'wusr': True, 'rusr': True, 'xusr': True, 'wgrp': False, 'rgrp': True, 'xgrp': True, 'woth': False, 'roth': True, 'xoth': True, 'isuid': False, 'isgid': False, 'blocks': 8, 'block_size': 4096, 'device_type': 0, 'readable': True, 'writeable': True, 'executable': True, 'pw_name': 'root', 'gr_name': 'root', 'mimetype': 'inode/directory', 'charset': 'binary', 'version': '3649318153', 'attributes': ['extents'], 'attr_flags': 'e'}, 'invocation': {'module_args': {'path': '/usr/local/sbin', 'follow': False, 'get_checksum': True, 'get_mime': True, 'get_attributes': True, 'checksum_algorithm': 'sha1'}}, 'failed': False, 'item': '/usr/local/sbin', 'ansible_loop_var': 'item'}) [0m
+[0;36mskipping: [node] => (item={'changed': False, 'stat': {'exists': True, 'path': '/sbin', 'mode': '0777', 'isdir': False, 'ischr': False, 'isblk': False, 'isreg': False, 'isfifo': False, 'islnk': True, 'issock': False, 'uid': 0, 'gid': 0, 'size': 8, 'inode': 14, 'dev': 64512, 'nlink': 1, 'atime': 1727212827.1559994, 'mtime': 1641802315.0, 'ctime': 1685640524.638001, 'wusr': True, 'rusr': True, 'xusr': True, 'wgrp': True, 'rgrp': True, 'xgrp': True, 'woth': True, 'roth': True, 'xoth': True, 'isuid': False, 'isgid': False, 'blocks': 0, 'block_size': 4096, 'device_type': 0, 'readable': True, 'writeable': True, 'executable': True, 'lnk_source': '/usr/sbin', 'lnk_target': 'usr/sbin', 'pw_name': 'root', 'gr_name': 'root', 'mimetype': 'inode/symlink', 'charset': 'binary', 'version': None, 'attributes': [], 'attr_flags': ''}, 'invocation': {'module_args': {'path': '/sbin', 'follow': False, 'get_checksum': True, 'get_mime': True, 'get_attributes': True, 'checksum_algorithm': 'sha1'}}, 'failed': False, 'item': '/sbin', 'ansible_loop_var': 'item'}) [0m
+[0;36mskipping: [node] => (item={'changed': False, 'stat': {'exists': True, 'path': '/bin', 'mode': '0777', 'isdir': False, 'ischr': False, 'isblk': False, 'isreg': False, 'isfifo': False, 'islnk': True, 'issock': False, 'uid': 0, 'gid': 0, 'size': 7, 'inode': 4806, 'dev': 64512, 'nlink': 1, 'atime': 1727212829.6919994, 'mtime': 1641802315.0, 'ctime': 1685640524.638001, 'wusr': True, 'rusr': True, 'xusr': True, 'wgrp': True, 'rgrp': True, 'xgrp': True, 'woth': True, 'roth': True, 'xoth': True, 'isuid': False, 'isgid': False, 'blocks': 0, 'block_size': 4096, 'device_type': 0, 'readable': True, 'writeable': True, 'executable': True, 'lnk_source': '/usr/bin', 'lnk_target': 'usr/bin', 'pw_name': 'root', 'gr_name': 'root', 'mimetype': 'inode/symlink', 'charset': 'binary', 'version': None, 'attributes': [], 'attr_flags': ''}, 'invocation': {'module_args': {'path': '/bin', 'follow': False, 'get_checksum': True, 'get_mime': True, 'get_attributes': True, 'checksum_algorithm': 'sha1'}}, 'failed': False, 'item': '/bin', 'ansible_loop_var': 'item'}) [0m
+[0;36mskipping: [node] => (item={'changed': False, 'stat': {'exists': True, 'path': '/usr/sbin', 'mode': '0555', 'isdir': True, 'ischr': False, 'isblk': False, 'isreg': False, 'isfifo': False, 'islnk': False, 'issock': False, 'uid': 0, 'gid': 0, 'size': 20480, 'inode': 261637, 'dev': 64512, 'nlink': 2, 'atime': 1727214181.7097242, 'mtime': 1727213949.9528925, 'ctime': 1727213949.9528925, 'wusr': False, 'rusr': True, 'xusr': True, 'wgrp': False, 'rgrp': True, 'xgrp': True, 'woth': False, 'roth': True, 'xoth': True, 'isuid': False, 'isgid': False, 'blocks': 40, 'block_size': 4096, 'device_type': 0, 'readable': True, 'writeable': True, 'executable': True, 'pw_name': 'root', 'gr_name': 'root', 'mimetype': 'inode/directory', 'charset': 'binary', 'version': '4091726769', 'attributes': ['indexed', 'extents'], 'attr_flags': 'Ie'}, 'invocation': {'module_args': {'path': '/usr/sbin', 'follow': False, 'get_checksum': True, 'get_mime': True, 'get_attributes': True, 'checksum_algorithm': 'sha1'}}, 'failed': False, 'item': '/usr/sbin', 'ansible_loop_var': 'item'}) [0m
+[0;36mskipping: [node] => (item={'changed': False, 'stat': {'exists': True, 'path': '/usr/bin', 'mode': '0555', 'isdir': True, 'ischr': False, 'isblk': False, 'isreg': False, 'isfifo': False, 'islnk': False, 'issock': False, 'uid': 0, 'gid': 0, 'size': 24576, 'inode': 261636, 'dev': 64512, 'nlink': 2, 'atime': 1727214214.469698, 'mtime': 1727213950.0818925, 'ctime': 1727213950.0818925, 'wusr': False, 'rusr': True, 'xusr': True, 'wgrp': False, 'rgrp': True, 'xgrp': True, 'woth': False, 'roth': True, 'xoth': True, 'isuid': False, 'isgid': False, 'blocks': 56, 'block_size': 4096, 'device_type': 0, 'readable': True, 'writeable': True, 'executable': True, 'pw_name': 'root', 'gr_name': 'root', 'mimetype': 'inode/directory', 'charset': 'binary', 'version': '3521943377', 'attributes': ['indexed', 'extents'], 'attr_flags': 'Ie'}, 'invocation': {'module_args': {'path': '/usr/bin', 'follow': False, 'get_checksum': True, 'get_mime': True, 'get_attributes': True, 'checksum_algorithm': 'sha1'}}, 'failed': False, 'item': '/usr/bin', 'ansible_loop_var': 'item'}) [0m
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 6.2.9 | PATCH | Ensure root is the only UID 0 account] *******
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 6.2.10 | PATCH | Ensure local interactive user home directories exist | Create dir if absent] ***
+[0;32mok: [node] => (item=ec2-user)[0m
+
+TASK [RHEL9-CIS : 6.2.10 | PATCH | Ensure local interactive user home directories exist | Set group ACL] ***
+[0;33mchanged: [node] => (item=/home/ec2-user)[0m
+
+TASK [RHEL9-CIS : 6.2.10 | PATCH | Ensure local interactive user home directories exist | Set other ACL] ***
+[0;32mok: [node] => (item=/home/ec2-user)[0m
+
+TASK [RHEL9-CIS : 6.2.11 | PATCH | Ensure local interactive users own their home directories] ***
+[0;32mok: [node] => (item=ec2-user)[0m
+
+TASK [RHEL9-CIS : 6.2.12 | AUDIT | Ensure local interactive user home directories are mode 750 or more restrictive | get stat] ***
+[0;32mok: [node] => (item=/home/ec2-user)[0m
+
+TASK [RHEL9-CIS : 6.2.12 | PATCH | Ensure local interactive user home directories are mode 750 or more restrictive | amend if needed] ***
+[0;36mskipping: [node] => (item={'changed': False, 'stat': {'exists': True, 'path': '/home/ec2-user', 'mode': '0700', 'isdir': True, 'ischr': False, 'isblk': False, 'isreg': False, 'isfifo': False, 'islnk': False, 'issock': False, 'uid': 1000, 'gid': 1000, 'size': 4096, 'inode': 4650, 'dev': 64512, 'nlink': 4, 'atime': 1727212975.6793258, 'mtime': 1727212975.332324, 'ctime': 1727214950.7287505, 'wusr': True, 'rusr': True, 'xusr': True, 'wgrp': False, 'rgrp': False, 'xgrp': False, 'woth': False, 'roth': False, 'xoth': False, 'isuid': False, 'isgid': False, 'blocks': 16, 'block_size': 4096, 'device_type': 0, 'readable': True, 'writeable': True, 'executable': True, 'pw_name': 'ec2-user', 'gr_name': 'ec2-user', 'mimetype': 'inode/directory', 'charset': 'binary', 'version': '3177894721', 'attributes': ['extents'], 'attr_flags': 'e'}, 'invocation': {'module_args': {'path': '/home/ec2-user', 'follow': False, 'get_checksum': True, 'get_mime': True, 'get_attributes': True, 'checksum_algorithm': 'sha1'}}, 'failed': False, 'item': '/home/ec2-user', 'ansible_loop_var': 'item'}) [0m
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : 6.2.12 | PATCH | Ensure local interactive user home directories are mode 750 or more restrictive | Set group ACL] ***
+[0;32mok: [node] => (item=/home/ec2-user)[0m
+
+TASK [RHEL9-CIS : 6.2.12 | PATCH | Ensure local interactive user home directories are mode 750 or more restrictive | Set other ACL] ***
+[0;32mok: [node] => (item=/home/ec2-user)[0m
+
+TASK [RHEL9-CIS : 6.2.13 | PATCH | Ensure no local interactive user has .netrc files] ***
+[0;32mok: [node] => (item=/home/ec2-user)[0m
+
+TASK [RHEL9-CIS : 6.2.14 | PATCH | Ensure no local interactive user has .forward files] ***
+[0;32mok: [node] => (item=/home/ec2-user)[0m
+
+TASK [RHEL9-CIS : 6.2.15 | PATCH | Ensure no local interactive user has .rhosts files] ***
+[0;32mok: [node] => (item=/home/ec2-user)[0m
+
+TASK [RHEL9-CIS : 6.2.16 | AUDIT | Ensure local interactive user dot files are not group or world writable | Check for files] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : 6.2.16 | AUDIT | Ensure local interactive user dot files are not group or world writable | update permissions] ***
+[0;32mok: [node] => (item=/home/ec2-user/.lesshst)[0m
+[0;32mok: [node] => (item=/home/ec2-user/.bashrc)[0m
+[0;32mok: [node] => (item=/home/ec2-user/.bash_profile)[0m
+[0;32mok: [node] => (item=/home/ec2-user/.bash_history)[0m
+[0;32mok: [node] => (item=/home/ec2-user/.bash_logout)[0m
+
+TASK [RHEL9-CIS : POST | AUDITD | Apply auditd template will for section 4.1.3 - only required rules will be added | stat file] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : POST | AUDITD | Apply auditd template will for section 4.1.3 - only required rules will be added | setup file] ***
+[0;33mchanged: [node][0m
+
+TASK [RHEL9-CIS : Auditd template updated, see diff output for details | AUDIT | Set fact for manual task warning.] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : POST | AUDITD | Apply auditd template will for section 4.1.3 - only required rules will be added | stat file] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : POST | Set up auditd user logging exceptions | setup file] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : POST | Gather the package facts after remediation] ***********
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : POST | Update sysctl] ****************************************
+[0;33mchanged: [node] => (item=60-kernel_sysctl.conf)[0m
+[0;33mchanged: [node] => (item=60-disable_ipv6.conf)[0m
+[0;33mchanged: [node] => (item=60-netipv4_sysctl.conf)[0m
+[0;33mchanged: [node] => (item=60-netipv6_sysctl.conf)[0m
+
+TASK [RHEL9-CIS : Flush handlers] **********************************************
+
+RUNNING HANDLER [RHEL9-CIS : Reload sysctl] ************************************
+[0;33mchanged: [node][0m
+
+RUNNING HANDLER [RHEL9-CIS : Restart sshd] *************************************
+[0;33mchanged: [node][0m
+
+RUNNING HANDLER [RHEL9-CIS : Grub2cfg] *****************************************
+[0;33mchanged: [node][0m
+
+RUNNING HANDLER [RHEL9-CIS : Restart rsyslog] **********************************
+[0;33mchanged: [node][0m
+
+RUNNING HANDLER [RHEL9-CIS : Systemd daemon reload] ****************************
+[0;32mok: [node][0m
+
+RUNNING HANDLER [RHEL9-CIS : Auditd immutable check] ***************************
+[0;32mok: [node][0m
+
+RUNNING HANDLER [RHEL9-CIS : Audit immutable fact] *****************************
+[0;32mok: [node] => {[0m
+[0;32m    "msg": "Reboot required for auditd to apply new rules as immutable set"[0m
+[0;32m}[0m
+
+RUNNING HANDLER [RHEL9-CIS : Restart auditd] ***********************************
+[0;33mchanged: [node][0m
+
+RUNNING HANDLER [RHEL9-CIS : Change_requires_reboot] ***************************
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : POST | Reboot system if changes require it and not skipped] ***
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : POST | Warning a reboot required but skip option set] ********
+[0;33mchanged: [node] => {[0m
+[0;33m    "msg": "Warning!! changes have been made that require a reboot to be implemented but skip reboot was set - Can affect compliance check results"[0m
+[0;33m}[0m
+
+TASK [RHEL9-CIS : Reboot_required | AUDIT | Set fact for manual task warning.] ***
+[0;32mok: [node][0m
+
+TASK [RHEL9-CIS : Post Audit | Run post_remediation RHEL9-CIS audit] ***********
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : Post Audit | ensure audit files readable by users] ***********
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : Post Audit | Capture audit data if json format] **************
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : Post Audit | Set Fact for audit summary] *********************
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : Post Audit | Capture audit data if documentation format] *****
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : Post Audit | Set Fact for audit summary] *********************
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : Show Audit Summary] ******************************************
+[0;36mskipping: [node][0m
+
+TASK [RHEL9-CIS : If Warnings found Output count and control IDs affected] *****
+[0;32mok: [node] => {[0m
+[0;32m    "msg": "You have 14 Warning(s) that require investigating that are related to the following benchmark ID(s)  [1.1.2.1] [1.1.3.1] [1.1.4.1] [1.1.5.1] [1.1.6.1] [1.1.7.1] [1.2.3] [1.6.1.6] [2.4] [4.3] [6.1.13] [6.1.14] [6.1.15] [Reboot_required]"[0m
+[0;32m}[0m
+
+PLAY RECAP *********************************************************************
+[0;33mnode[0m                       : [0;32mok=354 [0m [0;33mchanged=106 [0m unreachable=0    failed=0    [0;36mskipped=217 [0m rescued=0    [1;35mignored=1   [0m
+
