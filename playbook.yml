@@ -1,8 +1,8 @@
 ---
 - hosts: all
   become: true
-  ignore_errors: yes
-  gather_facts: yes
+  ignore_errors: true
+  gather_facts: true
 
   roles:
     - RHEL9-CIS
