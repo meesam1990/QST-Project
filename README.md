@@ -34,7 +34,7 @@
 ### Following commands were used to complete this assignment
 ```bash
 # Execute Ansible playbook, show the output of the playbook exeution on the terminal as well as append it to the playbook-summary.txt file:
-ANSIBLE_FORCE_COLOR=1 ansible-playbook -i inventory playbook.yml |tee -a artifacts/playbook-summary.txt
+ANSIBLE_FORCE_COLOR=1 ansible-playbook -i inventory playbook.yml --ask-become-pass|tee -a artifacts/playbook-summary.txt
 
 # Create monitoring namespace:
 ansible-playbook -i inventory eks-deploy.yml
