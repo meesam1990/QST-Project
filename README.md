@@ -31,6 +31,24 @@
 - Deploy Prometheus initially to the Kubernetes cluster.
 - Post-deployment, make required changes in the configmap that contains the Prometheus configuration and update the deployment.
 - Provide the Helm Chart configuration files before and after the changes.
-### Commands Used: Following are the commands I used to deploy and update this assignment.
+### Following commands were used to complete this assignment
+```bash
+# Execute Ansible playbook, show the output of the playbook exeution on the terminal as well as append it to the output.txt file
+ANSIBLE_FORCE_COLOR=1 ansible-playbook -i inventory playbook.yml |tee -a output.txt
+
+# Create monitoring namespace
+ansible-playbook -i inventory eks-deploy.yml
+
+# Install the Prometheus helm chart and deplpy resources in the monitoring namespace
+helm install prometheus ./prometheus --namespace monitoring
+
+# Upgrade the Prometheus helm chart after making changes to the configmap or any other yaml if required
+helm upgrade prometheus ./prometheus --namespace monitoring
+
+# Port forwarding the Prometheus app service to access it locally
+kubectl port-forward svc/prometheus 9090:9090 -n monitoring
+
+# Helm Chart Before Change: configmap.yaml contains only the Prometheus job.
+Helm Chart After Change: New job prometheus added to configmap.yaml.
 
 
