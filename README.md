@@ -33,7 +33,7 @@
 - Provide the Helm Chart configuration files before and after the changes.
 ### Following commands were used to complete this assignment
 ```bash
-# Execute Ansible playbook, show the output of the playbook exeution on the terminal as well as append it to the output.txt file
+# Execute Ansible playbook, show the output of the playbook exeution on the terminal as well as append it to the playbook-summary.txt file
 ANSIBLE_FORCE_COLOR=1 ansible-playbook -i inventory playbook.yml |tee -a artifacts/playbook-summary.txt
 
 # Create monitoring namespace
