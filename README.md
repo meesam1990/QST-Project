@@ -49,6 +49,6 @@ helm upgrade prometheus ./prometheus --namespace monitoring
 kubectl port-forward svc/prometheus 9090:9090 -n monitoring
 
 # Helm Chart Before Change: configmap.yaml contains only the Prometheus job.
-Helm Chart After Change: New job prometheus added to configmap.yaml.
+# Helm Chart After Change: New job prometheus added to configmap.yaml.
 
 
