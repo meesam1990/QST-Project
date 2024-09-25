@@ -33,22 +33,27 @@
 - Provide the Helm Chart configuration files before and after the changes.
 ### Following commands were used to complete this assignment
 ```bash
-# Execute Ansible playbook, show the output of the playbook exeution on the terminal as well as append it to the playbook-summary.txt file
+# Execute Ansible playbook, show the output of the playbook exeution on the terminal as well as append it to the playbook-summary.txt file:
 ANSIBLE_FORCE_COLOR=1 ansible-playbook -i inventory playbook.yml |tee -a artifacts/playbook-summary.txt
 
-# Create monitoring namespace
+# Create monitoring namespace:
 ansible-playbook -i inventory eks-deploy.yml
 
-# Install the Prometheus helm chart and deplpy resources in the monitoring namespace
+# Install the Prometheus helm chart and deplpy resources in the monitoring namespace:
 helm install prometheus ./prometheus --namespace monitoring
 
-# Upgrade the Prometheus helm chart after making changes to the configmap or any other yaml if required
+# Process of upgrading the Prometheus helm chart after making changes to the configmap or any other yaml if required uses the following command:
 helm upgrade prometheus ./prometheus --namespace monitoring
 
-# Port forwarding the Prometheus app service to access it locally
+# Port forwarding the Prometheus app service to access it locally:
 kubectl port-forward svc/prometheus 9090:9090 -n monitoring
 
 # Helm Chart Before Change: configmap.yaml contains only the Prometheus job.
-# Helm Chart After Change: New job prometheus added to configmap.yaml.
+# Helm Chart After Change: New job prometheus added to configmap.yaml:
+
+scrape_configs:
+    - job_name: prometheus
+      static_configs:
+      - targets: ['prometheus-service:9090']
 
 
